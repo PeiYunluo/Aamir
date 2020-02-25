@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "spring.devtools.add-properties",
+      "type": "java.lang.String",
+      "description": "Description for spring.devtools.add-properties."
+    },
+    {
+      "name": "spring.devtools.add-properties",
+      "type": "java.lang.String",
+      "description": "Description for spring.devtools.add-properties."
+    }
+  ] }

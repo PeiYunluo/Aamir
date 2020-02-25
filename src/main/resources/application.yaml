@@ -1,0 +1,69 @@
+server:
+  port: 8090
+  forward-headers-strategy: native
+  compression:
+    enabled: false
+    mime-types: application/javascript,text/css,application/json,application/xml,text/html,text/xml,text/plain
+  servlet:
+    application-display-name: Aamir Application
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+#  devtools:
+#    add-properties: false
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+
+    # H2 Database 配置
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:file:~/.Aamir/db/Aamir
+#    username: admin
+#    password: 123456
+
+#     MySQL 配置
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/aamir?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+
+  h2:
+    console:
+      settings:
+        web-allow-others: false
+      path: /h2-console
+      enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
+  flyway:
+    enabled: false
+  servlet:
+    multipart:
+      max-file-size: 10240MB
+      max-request-size: 10240MB
+#management:
+#  endpoints:
+#    web:
+#      base-path: /actuator
+#      exposure:
+#        include: ['httptrace', 'metrics','env','logfile','health']
+logging:
+  level:
+    Aamir: INFO
+  file:
+    path: ${user.home}/.Aamir/logs
+
+
+author:
+  name:peiyunluo
+  email:peiyunluo@icloud.com
+Aamir:
+  name:Aamir
+  description:presonal blog
+  version:v0.0.1
