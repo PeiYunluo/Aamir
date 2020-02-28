@@ -1,6 +1,5 @@
 package Aamir.model.entity;
 
-
 import Aamir.utils.DateUtils;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -11,13 +10,14 @@ import java.util.Date;
 
 /**
  * @author peiyunluo@icloud.com
- * @date 2020/2/24 15:27
+ * @date 2020/2/28 11:22
  */
 @Data
 @ToString
 @MappedSuperclass
 @EqualsAndHashCode
 public class BaseEntity {
+
     /**
      * Create time.
      */
@@ -60,4 +60,5 @@ public class BaseEntity {
     protected void preRemove() {
         updateTime = new Date();
     }
+
 }

@@ -16,34 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 //test springboot
 @RestController
 public class Application extends Object {
-    int a[] = {1, 2, 3, 4, 5};
-
-    void out() {
-        for (int j = 0; j < a.length; j++)
-            System.out.println(a[j] + "");
-    }
-
-    public static void abc(String str) {
-        str = "welcome";
-    }
 
     @RequestMapping("/")
     @ResponseBody
     String helloAamir() {
-
-      int arr[]={2,8,6,4};
-      for (int i = 0;i<arr.length-1;i++){
-          for (int j= 0;j<arr.length-1;j++){
-              if (arr[j]>arr[j+1]){
-                  int temp = arr[j+1];
-                  arr[j+1]=arr[j];
-                  arr[j]=temp;
-              }
-          }
-      }
-        for (int k =0;k<arr.length;k++)
-            System.out.println(arr[k]);
-        return "11";
+        return "hello Aamir";
     }
 
     public static void main(String[] args) {

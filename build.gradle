@@ -22,6 +22,7 @@ repositories {
 ext {
     h2Version = '1.4.196'
     commonsLangVersion = '3.8.1'
+    hutoolVersion = '5.0.3'
 }
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
@@ -33,4 +34,13 @@ dependencies {
     runtimeOnly "com.h2database:h2:$h2Version"
     runtimeOnly 'mysql:mysql-connector-java'
     implementation "org.apache.commons:commons-lang3:$commonsLangVersion"
+
+
+    implementation "cn.hutool:hutool-core:$hutoolVersion"
+    implementation "cn.hutool:hutool-crypto:$hutoolVersion"
+    implementation "cn.hutool:hutool-extra:$hutoolVersion"
+
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }

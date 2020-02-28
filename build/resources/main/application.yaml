@@ -6,7 +6,6 @@ server:
     mime-types: application/javascript,text/css,application/json,application/xml,text/html,text/xml,text/plain
   servlet:
     application-display-name: Aamir Application
-
 spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
@@ -41,12 +40,16 @@ spring:
       ddl-auto: update
     show-sql: true
     open-in-view: true
+
+
   flyway:
     enabled: false
   servlet:
     multipart:
       max-file-size: 10240MB
       max-request-size: 10240MB
+
+
 #management:
 #  endpoints:
 #    web:
@@ -67,3 +70,9 @@ Aamir:
   name:Aamir
   description:presonal blog
   version:v0.0.1
+
+#  本次毕业设计实现一个个人的博客系统。该系统主要的核心功能包括：
+#  1 对于管理员（博客主），提供仪表盘，主要是包括新的动态，文章数量，评论数量，
+#  访问数量等信息的展示与管理；以及文章的管理；页面的管理，评论的管理，博客展示的管理，
+#  个人资料的管理，及其文章备份，markdown文章的导入。
+#  2 对于游客可以查看文章，查看评论，参与评论。
