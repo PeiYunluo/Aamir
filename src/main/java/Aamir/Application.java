@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 //test springboot
-@RestController
-public class Application extends Object {
+//@RestController
+public class Application  {
 
-    @RequestMapping("/")
+/*    @RequestMapping("/")
     @ResponseBody
     String helloAamir() {
         return "hello Aamir";
-    }
+    }*/
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
