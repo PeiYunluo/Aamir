@@ -5,6 +5,6 @@ package Aamir.service;
  * @date 2020/2/29 9:43
  */
 public interface UserService {
-    boolean validatePassword(Integer userId,String oldPwd);
+    boolean validatePassword(String userId,String oldPwd);
     String test();
 }

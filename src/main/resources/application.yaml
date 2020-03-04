@@ -48,6 +48,9 @@ spring:
     multipart:
       max-file-size: 10240MB
       max-request-size: 10240MB
+  thymeleaf:
+    prefix: classpath:/templates/
+
 
 
 #management:
@@ -61,6 +64,19 @@ logging:
     Aamir: INFO
   file:
     path: ${user.home}/.Aamir/logs
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 author:

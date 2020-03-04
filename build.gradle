@@ -23,6 +23,7 @@ ext {
     h2Version = '1.4.196'
     commonsLangVersion = '3.8.1'
     hutoolVersion = '5.0.3'
+    swaggerVersion = '2.9.2'
 }
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
@@ -30,7 +31,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-undertow'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     //implementation 'org.springframework.boot:spring-boot-starter-freemarker'
+
     runtimeOnly "com.h2database:h2:$h2Version"
     runtimeOnly 'mysql:mysql-connector-java'
     implementation "org.apache.commons:commons-lang3:$commonsLangVersion"
@@ -43,4 +46,9 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 //    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    implementation "io.springfox:springfox-swagger2:$swaggerVersion"
+    implementation "io.springfox:springfox-swagger-ui:$swaggerVersion"
+
+//    implementation 'org.springframework.boot:spring-boot-devtools'
 }
