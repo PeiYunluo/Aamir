@@ -32,6 +32,13 @@ public class UserController {
     public String login() {
         return "adminLayui/login";
     }
+    //TODO 过滤器 等
+    @GetMapping("/test")
+    //@ResponseBody
+    @ApiOperation("login website")
+    public String test() {
+        return "views/index";
+    }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ApiOperation("login")

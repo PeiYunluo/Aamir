@@ -47,11 +47,11 @@
     </div>
 </div>
 <script type="text/html" id="isDeletedTool">
-    {{#  if(d.isDeleted == 1){ }}
-    <input type="checkbox" name="isDeleted" lay-skin="switch" value="{{d.categoryId}}"
+    {{#  if(d.deleted == 1){ }}
+    <input type="checkbox" name="isDeleted" lay-skin="switch" value="{{d.id}}"
            lay-text="已删除|未删除" lay-filter="isDeleted" checked>
     {{#  } else { }}
-    <input type="checkbox" name="isDeleted" lay-skin="switch" value="{{d.categoryId}}"
+    <input type="checkbox" name="isDeleted" lay-skin="switch" value="{{d.id}}"
            lay-text="已删除|未删除" lay-filter="isDeleted">
     {{#  } }}
 </script>
@@ -72,17 +72,17 @@
         var tableIns = table.render({
             elem: '#blogCategoryList',
             id: "blogCategoryTable",
-            url: '/admin/v1/category/paging',
+            url: '/category/paging',
             title: '分类列表',
             page: true,
             height: "full-110",
             toolbar: "#hint",
-            limits: [10],
+            limits: [1,2,3,4,5,6,7,8,9,10],
             cols: [[
                 {type: 'checkbox', field: 'blogId',width:"7%"},
-                {field: 'categoryName', title: '分类名', align: "center", unresize: "true",width:'30%',edit: 'text'},
-                {field: 'categoryRank', title: '排序值', align: 'center', unresize: "true",width:'23%',edit: 'text'},
-                {field: 'isDeleted', title: '当前状态', align: 'center', unresize: "true",width:'20%',templet: '#isDeletedTool'},
+                {field: 'categroyname', title: '分类名', align: "center", unresize: "true",width:'30%',edit: 'text'},
+                {field: 'categroyrank', title: '排序值', align: 'center', unresize: "true",width:'23%',edit: 'text'},
+                {field: 'deleted', title: '当前状态', align: 'center', unresize: "true",width:'20%',templet: '#isDeletedTool'},
                 {title: '操作', align: "center", unresize: "true", toolbar: "#blogListBar",width:'20%'}
             ]]
         });
@@ -109,7 +109,8 @@
                 ,data = obj.data //得到所在行所有键值
                 ,field = obj.field; //得到字段
             delete data['createTime'];
-            $.post("/admin/v1/category/update",data, function (s) {
+            delete data['updateTime'];
+            $.post("/category/updatename",data, function (s) {
                 layer.msg(s.message);
             });
         });
@@ -117,10 +118,10 @@
         form.on('switch(isDeleted)', function (data) {
             var isDeleted = data.elem.checked ? 1 : 0; //1为已删除,0为未删除
             var index = top.layer.msg('数据提交中，请稍候', {icon: 16, time: false, shade: 0.8});
-            $.post("/admin/v1/category/isDel",
+            $.post("/category/delete",
                 {
-                    "categoryId": data.value,
-                    "isDeleted": isDeleted
+                    "id": data.value,
+                    "deleted": isDeleted
                 }, function (s) {
                     setTimeout(function () {
                         top.layer.close(index);
@@ -134,7 +135,7 @@
         table.on('toolbar(blogCategoryList)', function(obj){
             switch(obj.event){
                 case 'addCategory':
-                    xadmin.open('信息添加','/admin/v1/category/add',450,250);
+                    xadmin.open('信息添加','/category/gotoadd',450,250);
                     break;
             }
         });

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author peiyunluo@icloud.com
@@ -19,4 +20,6 @@ import java.util.List;
 public interface TagRepository extends JpaRepository<Tag,Integer> {
     List<Tag> findAllByDeleted(Boolean tagdeleted);
     Page<Tag> findAll(Pageable pageable);
+    Optional<Tag> findById(Integer id);
+
 }

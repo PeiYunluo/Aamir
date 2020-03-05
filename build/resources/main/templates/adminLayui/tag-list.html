@@ -48,11 +48,11 @@
 </div>
 <script type="text/html" id="isDeletedTool">
 
-    {{#  if(d.isDeleted == 1){ }}
-    <input type="checkbox" name="isDeleted" lay-skin="switch" value="{{d.tagId}}"
+    {{#  if(d.deleted == 1){ }}
+    <input type="checkbox" name="isDeleted" lay-skin="switch" value="{{d.id}}"
            lay-text="已删除|未删除" lay-filter="isDeleted" checked>
     {{#  } else { }}
-    <input type="checkbox" name="isDeleted" lay-skin="switch" value="{{d.tagId}}"
+    <input type="checkbox" name="isDeleted" lay-skin="switch" value="{{d.id}}"
            lay-text="已删除|未删除" lay-filter="isDeleted">
     {{#  } }}
 </script>
@@ -85,7 +85,7 @@
                 {field: 'id', title: '标签id', align: "center", unresize: "true", width: '23%'},
                 {field: 'name', title: '标签名', align: "center", unresize: "true", width: '30%', edit: 'text'},
                 {
-                    field: 'isDeleted',
+                    field: 'deleted',
                     title: '当前状态',
                     align: 'center',
                     unresize: "true",
@@ -118,18 +118,19 @@
                 , data = obj.data //得到所在行所有键值
                 , field = obj.field; //得到字段
             delete data['createTime'];
-            /*            $.post("/admin/v1/category/update",data, function (s) {
+            delete data['updateTime'];
+                        $.post("/tag/updateTagname",data, function (s) {
                             layer.msg(s.message);
-                        });*/
+                        });
         });
 
         form.on('switch(isDeleted)', function (data) {
             var isDeleted = data.elem.checked ? 1 : 0; //1为已删除,0为未删除
             var index = top.layer.msg('数据提交中，请稍候', {icon: 16, time: false, shade: 0.8});
-            $.post("/admin/v1/tags/isDel",
+            $.post("/tag/deleteTag",
                 {
-                    "tagId": data.value,
-                    "isDeleted": isDeleted
+                    "id": data.value,
+                    "deleted": isDeleted
                 }, function (s) {
                     setTimeout(function () {
                         top.layer.close(index);
@@ -144,7 +145,7 @@
             if (obj.event === 'addTag') {
                 //默认prompt
                 layer.prompt({title: '添加标签信息', formType: 0, maxlength: 50}, function (value, index) {
-                    $.post("/admin/v1/tags/add", {"tagName": value}, function (s) {
+                    $.post("/tag/addTag", {"name": value}, function (s) {
                         layer.msg(s.message);
                         tableIns.reload();
                     });

@@ -33,10 +33,10 @@ public class Category extends BaseEntity {
      * Category name.
      */
 
-    @Column(name = "categroy_rank")
+    @Column(name = "category_rank")
     private Integer categroyrank;
 
-    @Column(name = "categroy_name", columnDefinition = "varchar(255) not null")
+    @Column(name = "category_name", columnDefinition = "varchar(255) not null")
     private String categroyname;
 
     /**

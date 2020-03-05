@@ -13,6 +13,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
@@ -51,8 +52,9 @@ public class TagController {
      */
     @ResponseBody
     @GetMapping("/getAlltags/paging")
+    //TODO:传入前台的数据可以只有id和name两项
     public AjaxResultPage<Tag> getCategoryList(AjaxPutPage<Tag> ajaxPutPage, Tag condition){
-        Pageable pageable = PageRequest.of(ajaxPutPage.getPage() - 1, ajaxPutPage.getLimit());
+        Pageable pageable = PageRequest.of(ajaxPutPage.getPage()-1, ajaxPutPage.getLimit());
         Page<Tag> page = tagService.getTags(pageable);
         AjaxResultPage<Tag> result = new AjaxResultPage<>();
         result.setData(page.getContent());
@@ -61,4 +63,42 @@ public class TagController {
 //        result.setMsg("成功");
         return result;
     }
+    @ResponseBody
+    @PostMapping("/deleteTag")
+    public Result deleteTag(Tag tag){
+        boolean flag = tagService.deleteTagbyid(tag.getId());
+        if (flag){
+            return ResultGenerator.getResultByHttp(HttpStatus.OK);
+        }
+        return ResultGenerator.getResultByHttp(HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    //TODO 字段不可为空的提示
+    @ResponseBody
+    @PostMapping("/addTag")
+    public Result addTag(Tag tag){
+        //tag.setCreateTime(DateUtils.getLocalCurrentDate());
+        boolean flag = tagService.saveTag(tag);
+        if (flag){
+            return ResultGenerator.getResultByHttp(HttpStatus.OK);
+        }else {
+            return ResultGenerator.getResultByHttp(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    //TODO:分页方面  3条数据 2条一页只能显示1页
+
+    @ResponseBody
+    @PostMapping("/updateTagname")
+    public Result updateTagname(Tag tag){
+        //tag.setCreateTime(DateUtils.getLocalCurrentDate());
+        boolean flag = tagService.updateTagname(tag);
+        if (flag){
+            return ResultGenerator.getResultByHttp(HttpStatus.OK);
+        }else {
+            return ResultGenerator.getResultByHttp(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    //TODO search
+
+
 }

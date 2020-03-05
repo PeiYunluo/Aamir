@@ -15,4 +15,7 @@ public interface TagService {
 
     List<Tag> getAlltags();
     Page<Tag> getTags(Pageable pageable);
+    Boolean deleteTagbyid(Integer id);
+    Boolean saveTag(Tag tag);
+    Boolean updateTagname(Tag tag);
 }
