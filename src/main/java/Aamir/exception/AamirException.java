@@ -1,12 +1,15 @@
 package Aamir.exception;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author peiyunluo@icloud.com
  * @date 2020/3/7 17:00
  */
-@Data
+@Getter
+@Setter
 public class AamirException extends RuntimeException{
     private static final long serialVersionUID = 1L;
 

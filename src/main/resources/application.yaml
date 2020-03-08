@@ -50,6 +50,8 @@ spring:
       max-request-size: 10240MB
   thymeleaf:
     prefix: classpath:/templates/
+  mvc:
+    static-path-pattern: /static/X-admin/**
 
 
 
@@ -75,7 +77,6 @@ audience:
   name: restapiuser
   # 过期时间，时间戳
   expiresSecond: 172800
-
 
 
 

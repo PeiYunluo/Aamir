@@ -1,8 +1,6 @@
 package Aamir.model.entity;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -13,12 +11,13 @@ import java.util.Objects;
  */
 
 //id   blogid   tagid   creat-time
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "posttags")
 //@DiscriminatorColumn(name = "type", discriminatorType = DiscriminatorType.INTEGER, columnDefinition = "int default 0")
 @ToString(callSuper = true)
-//@EqualsAndHashCode(callSuper = true)
+//@EqualsAndHashCode(callSuper = false)
 public class PostTag extends BaseEntity{
 
     @Id

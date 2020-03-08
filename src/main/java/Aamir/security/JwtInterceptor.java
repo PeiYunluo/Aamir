@@ -20,8 +20,9 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String headerToken = request.getHeader("token");
+        System.out.println(request.getRequestURI());
 
-        if (!request.getRequestURI().contains("login")) {
+
             if (headerToken == null || headerToken.length() == 0) {
                 throw new AamirException("1000","无token，请重新登录");
             }
@@ -33,9 +34,9 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
                     throw new AamirException("1100","token错误，请重新登录");
                 }
                 }
-            }
+
             //response.sendRedirect("login.do");
-        return false;
+
 
         }
     }

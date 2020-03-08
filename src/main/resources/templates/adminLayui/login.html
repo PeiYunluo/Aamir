@@ -71,7 +71,9 @@
                 data: JSON.stringify(param),
                 dataType:"json",
                 contentType:"application/json; charset=utf-8",
+                //headers:{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODM2MzA2ODYsInN1YiI6IntcIm5hbWVcIjpcIm5hbWVcIixcInVzZXJJZFwiOlwidXNlcmlkXCJ9IiwiaXNzIjoieGlleGllIiwiYXVkIjoiSGVsbG8gV29ybGQiLCJleHAiOjE1ODM3MTcwODYsIm5iZiI6MTU4MzYzMDY4Nn0.YVZzGK4Yd7SsS0ItFpYnJO6PiFDug4cvjyJ4hBzUo7w"},
                 success: function(s) {
+                    console.log(s);
                     if (s.resultCode == 200) {
                         //加载层-风格3
                         layer.load(2);
@@ -79,6 +81,8 @@
                             layer.closeAll('loading');
                         }, 1500);
                         layer.msg(s.message, function () {
+                            console.log(s.data);
+
                             location.href = s.data;
                         });
                     } else {

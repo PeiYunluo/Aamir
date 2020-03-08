@@ -1,7 +1,6 @@
 package Aamir.model.entity;
 
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -10,11 +9,13 @@ import java.util.Objects;
  * @author peiyunluo@icloud.com
  * @date 2020/2/28 16:54
  */
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "postcategories")
 //@DiscriminatorColumn(name = "type", discriminatorType = DiscriminatorType.INTEGER, columnDefinition = "int default 0")
 @ToString(callSuper = true)
+//@EqualsAndHashCode(callSuper = false)
 public class PostCategory extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
