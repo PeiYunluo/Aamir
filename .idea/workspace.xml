@@ -2,41 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f64cae66-e073-435a-a8d0-5239fb4ba7d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Aamir/model/params/CategoryParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/CategroyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/CategroyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Aamir/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Aamir/exception/AamirException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Aamir/exception/AamirGlobalException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Aamir/security/Audience.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Aamir/security/JwtInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Aamir/utils/JwtTokenUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/CategroyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/CategroyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/TagController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/TagController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/CategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/CategoryRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/TagRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/TagRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/service/Impl/TagServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/service/Impl/TagServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/service/TagService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/service/TagService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/adminLayui/category-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/adminLayui/category-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/adminLayui/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/adminLayui/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/adminLayui/tag-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/adminLayui/tag-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/CategroyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/CategroyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/TagController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/model/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/model/entity/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/repository/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/repository/TagRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/repository/TagRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/TagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/TagServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/TagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/TagService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminLayui/category-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminLayui/category-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminLayui/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminLayui/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminLayui/tag-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminLayui/tag-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +107,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.36666667" />
-    <property name="settings.editor.selected.configurable" value="DockerRegistry" />
+    <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -135,7 +122,20 @@
       <recent name="D:\IdeaProjects\Aamir\src\main\java\Aamir\service" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="JwtTokenUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Aamir.utils.JwtTokenUtil" />
+      <module name="Aamir.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Aamir.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Aamir.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Aamir.Application" />
@@ -143,6 +143,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JwtTokenUtil" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -195,6 +200,15 @@
       <workItem from="1583323656877" duration="2989000" />
       <workItem from="1583328015644" duration="1209000" />
       <workItem from="1583369454610" duration="10777000" />
+      <workItem from="1583383548788" duration="182000" />
+      <workItem from="1583486849372" duration="4838000" />
+      <workItem from="1583502503120" duration="113000" />
+      <workItem from="1583502634631" duration="83000" />
+      <workItem from="1583502744138" duration="2238000" />
+      <workItem from="1583544891228" duration="3655000" />
+      <workItem from="1583570893579" duration="8151000" />
+      <workItem from="1583591356404" duration="1313000" />
+      <workItem from="1583629085947" duration="644000" />
     </task>
     <servers />
   </component>
@@ -222,10 +236,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1582522375432" />
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1583374923437">
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1583576703863">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583374923437" />
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583576703863" />
     <state x="447" y="341" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1582941030522">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -238,66 +252,66 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="503" y="177" key="EnvironmentVariablesDialog/0.0.1536.824@0.0.1536.824" timestamp="1582522361666" />
-    <state width="1493" height="260" key="GridCell.Tab.0.bottom" timestamp="1583381112052">
+    <state width="1493" height="240" key="GridCell.Tab.0.bottom" timestamp="1583592678555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583381112052" />
-    <state width="1493" height="260" key="GridCell.Tab.0.center" timestamp="1583381112052">
+    <state width="1493" height="240" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583592678555" />
+    <state width="1493" height="240" key="GridCell.Tab.0.center" timestamp="1583592678555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583381112052" />
-    <state width="1493" height="260" key="GridCell.Tab.0.left" timestamp="1583381112052">
+    <state width="1493" height="240" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583592678555" />
+    <state width="1493" height="240" key="GridCell.Tab.0.left" timestamp="1583592678555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583381112052" />
-    <state width="1493" height="260" key="GridCell.Tab.0.right" timestamp="1583381112052">
+    <state width="1493" height="240" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583592678555" />
+    <state width="1493" height="240" key="GridCell.Tab.0.right" timestamp="1583592678555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583381112052" />
-    <state width="1493" height="260" key="GridCell.Tab.1.bottom" timestamp="1583381112053">
+    <state width="1493" height="240" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583592678555" />
+    <state width="1493" height="240" key="GridCell.Tab.1.bottom" timestamp="1583592678555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583381112053" />
-    <state width="1493" height="260" key="GridCell.Tab.1.center" timestamp="1583381112053">
+    <state width="1493" height="240" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583592678555" />
+    <state width="1493" height="240" key="GridCell.Tab.1.center" timestamp="1583592678555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583381112053" />
-    <state width="1493" height="260" key="GridCell.Tab.1.left" timestamp="1583381112053">
+    <state width="1493" height="240" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583592678555" />
+    <state width="1493" height="240" key="GridCell.Tab.1.left" timestamp="1583592678555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583381112053" />
-    <state width="1493" height="260" key="GridCell.Tab.1.right" timestamp="1583381112053">
+    <state width="1493" height="240" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583592678555" />
+    <state width="1493" height="240" key="GridCell.Tab.1.right" timestamp="1583592678555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583381112053" />
-    <state width="1493" height="260" key="GridCell.Tab.2.bottom" timestamp="1583381112053">
+    <state width="1493" height="240" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583592678555" />
+    <state width="1493" height="260" key="GridCell.Tab.2.bottom" timestamp="1583580546217">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583381112053" />
-    <state width="1493" height="260" key="GridCell.Tab.2.center" timestamp="1583381112053">
+    <state width="1493" height="260" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583580546217" />
+    <state width="1493" height="260" key="GridCell.Tab.2.center" timestamp="1583580546217">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1583381112053" />
-    <state width="1493" height="260" key="GridCell.Tab.2.left" timestamp="1583381112053">
+    <state width="1493" height="260" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1583580546217" />
+    <state width="1493" height="260" key="GridCell.Tab.2.left" timestamp="1583580546217">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1583381112053" />
-    <state width="1493" height="260" key="GridCell.Tab.2.right" timestamp="1583381112053">
+    <state width="1493" height="260" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1583580546217" />
+    <state width="1493" height="260" key="GridCell.Tab.2.right" timestamp="1583580546217">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1583381112053" />
+    <state width="1493" height="260" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1583580546217" />
     <state x="423" y="121" key="Registry" timestamp="1583125727748">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="423" y="121" key="Registry/0.0.1536.824@0.0.1536.824" timestamp="1583125727748" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1583125541374">
+    <state x="249" y="0" key="SettingsEditor" timestamp="1583546322912">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583125541374" />
-    <state x="461" y="305" key="com.intellij.ide.util.TipDialog" timestamp="1583369472903">
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583546322912" />
+    <state x="461" y="305" key="com.intellij.ide.util.TipDialog" timestamp="1583629095116">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="461" y="305" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583369472903" />
+    <state x="461" y="305" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583629095116" />
     <state x="390" y="1" width="755" height="822" key="find.popup" timestamp="1582715609783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -315,16 +329,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Aamir/controller/user/TagController.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Aamir/controller/user/TagController.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Aamir/controller/user/CategroyController.java</url>
           <line>60</line>
           <option name="timeStamp" value="5" />
@@ -333,6 +337,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/Aamir/controller/user/CategroyController.java</url>
           <line>70</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Aamir/controller/user/UserController.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Aamir/controller/user/UserController.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

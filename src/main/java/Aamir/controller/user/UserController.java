@@ -1,5 +1,6 @@
 package Aamir.controller.user;
 
+import Aamir.exception.AamirException;
 import Aamir.model.dto.Result;
 import Aamir.model.enums.HttpStatus;
 import Aamir.model.params.LoginParam;
@@ -66,6 +67,14 @@ public class UserController {
     }
 
 
+    @GetMapping("/testexception")
+    @ResponseBody
+    public boolean testexception(){
+        if(true){
+            throw new AamirException("400","test！");
+        }
+    return true;
+    }
     //    @ResponseBody
 //    @PostMapping("/login")
 //    public Boolean login(String username,String password){
