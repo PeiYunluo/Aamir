@@ -2,10 +2,7 @@ package Aamir.security;
 
 import Aamir.exception.AamirException;
 import Aamir.utils.JwtTokenUtil;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.context.support.WebApplicationContextUtils;
-import org.springframework.web.method.HandlerMethod;
+
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +18,10 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String headerToken = request.getHeader("token");
         System.out.println(request.getRequestURI());
-
+        String method = request.getMethod();
+            if (!method.equalsIgnoreCase("GET") && !method.equalsIgnoreCase("POST")){
+                return true;
+            }
 
             if (headerToken == null || headerToken.length() == 0) {
                 throw new AamirException("1000","无token，请重新登录");

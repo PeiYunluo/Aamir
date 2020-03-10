@@ -5,6 +5,7 @@ import Aamir.model.dto.AjaxResultPage;
 import Aamir.model.dto.Result;
 import Aamir.model.entity.Tag;
 import Aamir.model.enums.HttpStatus;
+import Aamir.model.params.TaglistParam;
 import Aamir.service.TagService;
 import Aamir.utils.ResultGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,6 +98,26 @@ public class TagController {
         }
     }
     //TODO search
+
+
+
+    @ResponseBody
+    @GetMapping("/list")
+    //http://localhost:8090/article/list?page=1&limit=20&sort=%2Bid
+    //page: 1
+    //limit: 20
+    //sort: +id
+    //TODO:传入前台的数据可以只有id和name两项
+    public AjaxResultPage<Tag> getTagList(TaglistParam taglistParam){
+        Pageable pageable = PageRequest.of(taglistParam.getPage()-1, taglistParam.getLimit());
+        Page<Tag> page = tagService.getTags(pageable);
+        AjaxResultPage<Tag> result = new AjaxResultPage<>();
+        result.setData(page.getContent());
+        result.setCount(page.getTotalPages());
+//        result.setCode(200);
+//        result.setMsg("成功");
+        return result;
+    }
 
 
 }
