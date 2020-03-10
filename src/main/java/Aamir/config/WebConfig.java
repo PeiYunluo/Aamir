@@ -18,11 +18,8 @@ public class WebConfig implements WebMvcConfigurer  {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         System.out.println("addInterceptors");
-        //拦截路径可自行配置多个 可用 ，分隔开
         registry.addInterceptor(new JwtInterceptor()).addPathPatterns("/tag/**","/category/**").excludePathPatterns("/user/**");
-        //.excludePathPatterns("/X-admin/**","/favicon.ico")
         System.out.println("addInterceptors___________________)");
-//        registry.addInterceptor(new JwtInterceptor()).excludePathPatterns("/user/login**");
     }
     /**
      * 跨域支持

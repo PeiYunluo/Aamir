@@ -81,9 +81,9 @@
                             layer.closeAll('loading');
                         }, 1500);
                         layer.msg(s.message, function () {
-                            console.log(s.data);
+                            console.log(s.message);
 
-                            location.href = s.data;
+                            location.href = s.data.address;
                         });
                     } else {
                         layer.msg(s.message, function () {

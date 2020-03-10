@@ -25,7 +25,7 @@ import java.util.Date;
 
 public class JwtTokenUtil {
     private static final String base64Security = "base64Security";
-    private static final String iss = "xiexie";
+    private static final String iss = "Aamir";
     private static final long TTLMillis = 1000*60*60*24; //生存时间? 24 hours
 
     public static Claims parseJWT(String jsonWebToken) {
