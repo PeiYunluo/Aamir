@@ -2,6 +2,7 @@ package Aamir.controller.user;
 
 import Aamir.exception.AamirException;
 import Aamir.model.dto.Result;
+import Aamir.model.entity.User;
 import Aamir.model.enums.HttpStatus;
 import Aamir.model.params.LoginParam;
 import Aamir.service.UserService;
@@ -88,10 +89,13 @@ public class UserController {
         Result<Map> result = new Result<>();
         try {
             Claims parseToken = JwtTokenUtil.parseJWT(token);
+            //TODO
+            //先写死 应该从token中获取
             //map.put("name", parseToken.getSubject());
             System.out.println(parseToken.getSubject());
             map.put("name","admin");
             map.put("userId","admin");
+            map.put("avatar",userService.getUser(1).getAvatar());
             String[] ms = parseToken.getSubject().split(":");
             System.out.println(ms.toString());
             result.setResultCode(200);
@@ -103,6 +107,16 @@ public class UserController {
         return result;
     }
 
+
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    @ApiOperation("logout")
+    @ResponseBody
+    public Result<User> logout(){
+        Result result = new Result();
+        result.setResultCode(200);
+        result.setMessage("logout");
+        return result;
+    }
 
     @GetMapping("/index")
     public String index(HttpSession session) {
