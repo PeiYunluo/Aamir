@@ -34,9 +34,6 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
                     throw new AamirException("1100","token错误，请重新登录");
                 }
                 }
-
             //response.sendRedirect("login.do");
-
-
         }
     }

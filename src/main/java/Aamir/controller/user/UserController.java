@@ -94,9 +94,6 @@ public class UserController {
             map.put("userId","admin");
             String[] ms = parseToken.getSubject().split(":");
             System.out.println(ms.toString());
-
-
-
             result.setResultCode(200);
             result.setMessage("success");
             result.setData(map);

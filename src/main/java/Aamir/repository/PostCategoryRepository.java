@@ -1,8 +1,13 @@
 package Aamir.repository;
 
+import Aamir.model.entity.PostCategory;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 /**
  * @author peiyunluo@icloud.com
  * @date 2020/2/29 10:10
  */
-public interface PostCategoryRepository {
+@Repository
+public interface PostCategoryRepository  extends JpaRepository<PostCategory,Integer> {
 }

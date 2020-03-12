@@ -29,21 +29,26 @@ public class TagController {
     private TagService tagService;
 
     @GetMapping("/taglist")
-    public String gotoTag(){
+    public String gotoTag() {
         return "adminLayui/tag-list";
     }
 
     @ResponseBody
     @GetMapping("/getAlltags")
-    public Result<Tag> tagsList(){
-//        QueryWrapper<Tag> queryWrapper = new QueryWrapper<Tag>();
-//        queryWrapper.lambda().eq(Tag::getIsDeleted, PostStatus.ZERO);
-//        List<Tag> list = blogTagService.list(queryWrapper);
-       List<Tag> list = tagService.getAlltags();
-        return ResultGenerator.getResultByHttp(HttpStatus.OK,list);
+    public Result<Tag> tagsList() {
+        //得到所有未经删除的tag
+        List<Tag> list = tagService.getAlltags();
+        for (Tag tag : list
+        ) {
+            if (tag.getDeleted())
+                list.remove(tag);
+        }
+        return ResultGenerator.getResultByHttp(HttpStatus.OK, list);
     }
+
     /**
      * 标签分页
+     *
      * @param ajaxPutPage
      * @param condition
      * @return com.site.blog.dto.AjaxResultPage<com.site.blog.entity.BlogTag>
@@ -52,8 +57,8 @@ public class TagController {
     @ResponseBody
     @GetMapping("/getAlltags/paging")
     //TODO:传入前台的数据可以只有id和name两项
-    public AjaxResultPage<Tag> getCategoryList(AjaxPutPage<Tag> ajaxPutPage, Tag condition){
-        Pageable pageable = PageRequest.of(ajaxPutPage.getPage()-1, ajaxPutPage.getLimit());
+    public AjaxResultPage<Tag> getCategoryList(AjaxPutPage<Tag> ajaxPutPage, Tag condition) {
+        Pageable pageable = PageRequest.of(ajaxPutPage.getPage() - 1, ajaxPutPage.getLimit());
         Page<Tag> page = tagService.getTags(pageable);
         AjaxResultPage<Tag> result = new AjaxResultPage<>();
         result.setData(page.getContent());
@@ -62,11 +67,12 @@ public class TagController {
 //        result.setMsg("成功");
         return result;
     }
+
     @ResponseBody
     @PostMapping("/deleteTag")
-    public Result deleteTag(Tag tag){
+    public Result deleteTag(Tag tag) {
         boolean flag = tagService.deleteTagbyid(tag.getId());
-        if (flag){
+        if (flag) {
             return ResultGenerator.getResultByHttp(HttpStatus.OK);
         }
         return ResultGenerator.getResultByHttp(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -75,12 +81,12 @@ public class TagController {
     //TODO 字段不可为空的提示
     @ResponseBody
     @PostMapping("/addTag")
-    public Result addTag(Tag tag){
+    public Result addTag(Tag tag) {
         //tag.setCreateTime(DateUtils.getLocalCurrentDate());
         boolean flag = tagService.saveTag(tag);
-        if (flag){
+        if (flag) {
             return ResultGenerator.getResultByHttp(HttpStatus.OK);
-        }else {
+        } else {
             return ResultGenerator.getResultByHttp(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -88,28 +94,23 @@ public class TagController {
 
     @ResponseBody
     @PostMapping("/updateTagname")
-    public Result updateTagname(Tag tag){
+    public Result updateTagname(Tag tag) {
         //tag.setCreateTime(DateUtils.getLocalCurrentDate());
         boolean flag = tagService.updateTagname(tag);
-        if (flag){
+        if (flag) {
             return ResultGenerator.getResultByHttp(HttpStatus.OK);
-        }else {
+        } else {
             return ResultGenerator.getResultByHttp(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
     //TODO search
 
 
-
     @ResponseBody
     @GetMapping("/list")
-    //http://localhost:8090/article/list?page=1&limit=20&sort=%2Bid
-    //page: 1
-    //limit: 20
-    //sort: +id
     //TODO:传入前台的数据可以只有id和name两项
-    public AjaxResultPage<Tag> getTagList(TaglistParam taglistParam){
-        Pageable pageable = PageRequest.of(taglistParam.getPage()-1, taglistParam.getLimit());
+    public AjaxResultPage<Tag> getTagList(TaglistParam taglistParam) {
+        Pageable pageable = PageRequest.of(taglistParam.getPage() - 1, taglistParam.getLimit());
         Page<Tag> page = tagService.getTags(pageable);
         AjaxResultPage<Tag> result = new AjaxResultPage<>();
         result.setData(page.getContent());

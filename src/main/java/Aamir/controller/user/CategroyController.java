@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * @author peiyunluo@icloud.com
  * @date 2020/3/4 9:22
@@ -41,7 +43,14 @@ public class CategroyController {
     @ResponseBody
     @GetMapping("/getAll")
     public Result<Category> categoryList(){
-        return null;
+        List<Category> list = categroyService.getAll();
+        for (Category category:list
+             ) {
+            if (category.getDeleted()){
+                list.remove(category);
+            }
+        }
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,list);
     }
 
     @ResponseBody
