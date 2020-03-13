@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface PostCategoryRepository  extends JpaRepository<PostCategory,Integer> {
+    boolean existsByPostIdAndCategoryId(Integer postid,Integer categoryid);
 }

@@ -67,6 +67,9 @@ public class Post extends BaseEntity{
     @Column(name = "visits")
     private Long visits;
 
+    @Column(name = "thumbnail_url",columnDefinition = "varchar(1024) default ''")
+    private String thumbnailurl;
+
     @Override
     protected void prePersist() {
         super.prePersist();
@@ -76,6 +79,9 @@ public class Post extends BaseEntity{
         }
         if (summary == null){
             summary ="";
+        }
+        if (thumbnailurl == null){
+            thumbnailurl="";
         }
         if (disallowComment == null){
             disallowComment = false;

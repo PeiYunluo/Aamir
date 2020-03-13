@@ -5,6 +5,7 @@ import Aamir.model.entity.Post;
 import Aamir.model.entity.PostTag;
 import Aamir.model.entity.Tag;
 import Aamir.model.params.PostSaveParam;
+import Aamir.model.params.PostUpdateParam;
 import Aamir.repository.CategoryRepository;
 import Aamir.repository.PostRepository;
 import Aamir.repository.TagRepository;
@@ -44,7 +45,6 @@ public class PostServiceImpl implements PostService {
         post.setSummary(postSaveParam.getSummary());
         //新建并保存
         if (postSaveParam.getId() == null || postSaveParam.getId() == 0){
-
             return postRepository.saveAndFlush(post);
         } else if (postRepository.existsById(postSaveParam.getId())) //查找并保存
             {
@@ -75,5 +75,47 @@ public class PostServiceImpl implements PostService {
         List<Post> postList = postRepository.findAll();
         List<Tag> tagList = tagRepository.findAllByDeleted(false);
         return null;
+    }
+
+    @Override
+    public boolean deletePostbyid(Integer postid) {
+        Post post = postRepository.findById(postid).get();
+        if(post!=null){
+            post.setDeleted(!post.getDeleted());
+            postRepository.saveAndFlush(post);
+            return true;
+        }else return false;
+    }
+
+    @Override
+    public boolean switchComment(Integer postid) {
+        Post post = postRepository.findById(postid).get();
+        if(post!=null){
+            post.setDisallowComment(!post.getDisallowComment());
+            postRepository.saveAndFlush(post);
+            return true;
+        }else return false;
+    }
+
+    @Override
+    public Post updatePost(PostUpdateParam postUpdateParam) {
+        Post post = postRepository.findById(postUpdateParam.getId()).get();
+        post.setThumbnailurl(postUpdateParam.getThumbnailurl());
+        post.setSummary(postUpdateParam.getSummary());
+        post.setUrl(postUpdateParam.getUrl());
+        post.setTitle(postUpdateParam.getTitle());
+        return postRepository.saveAndFlush(post);
+    }
+
+    @Override
+    public boolean switchstatus(Integer postid) {
+        Post post = postRepository.findById(postid).get();
+        if (post.getStatus() == 0)
+            post.setStatus(1);
+        else post.setStatus(0);
+        if (postRepository.saveAndFlush(post).getId()!=null){
+            return true;
+        }
+       return false;
     }
 }

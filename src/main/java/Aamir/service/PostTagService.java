@@ -13,4 +13,6 @@ import java.util.List;
 public interface PostTagService {
     List<Tag> getAlltags(List<Integer> list);
     PostTag add(Integer postid, Integer tagid);
+    List<Integer> getTagsidbyid(Integer postid);
+    boolean isexist(Integer postid, Integer tagid);
 }

@@ -8,6 +8,7 @@ import Aamir.service.PostTagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,5 +34,25 @@ public class PostTagServiceImpl implements PostTagService {
         postTag.setTagId(tagid);
         return postTagRepository.saveAndFlush(postTag);
 
+    }
+
+    @Override
+    public List<Integer> getTagsidbyid(Integer postid) {
+        List<Integer> integerList = new ArrayList<>();
+        List<PostTag> postTagList =postTagRepository.findAll();
+        for (PostTag posttag:postTagList
+             ) {
+            if (posttag.getPostId()==postid&&posttag.getDeleted()!=true){
+                integerList.add(posttag.getTagId());
+            }
+        }
+        return integerList;
+    }
+
+    @Override
+    public boolean isexist(Integer postid, Integer tagid) {
+        if (postTagRepository.existsByPostIdAndTagId(postid,tagid))
+        return true;
+        else return false;
     }
 }
