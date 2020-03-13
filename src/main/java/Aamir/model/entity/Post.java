@@ -52,7 +52,7 @@ public class Post extends BaseEntity{
     /**
      * Post summary.
      */
-    @Column(name = "summary", columnDefinition = "varchar(255) default ''")
+    @Column(name = "summary", columnDefinition = "varchar(1024) default ''")
     private String summary;
 
     /**

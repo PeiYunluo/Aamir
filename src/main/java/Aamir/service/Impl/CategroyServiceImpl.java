@@ -46,7 +46,11 @@ public class CategroyServiceImpl implements CategroyService {
     //TODO 新增
     @Override
     public Boolean saveCategroy(Category category) {
-        return null;
+        if(category.getCategroyname()!=null || category.getCategroyname()!=""){
+            categoryRepository.saveAndFlush(category);
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -54,6 +58,13 @@ public class CategroyServiceImpl implements CategroyService {
         Category category = categoryRepository.findById(categoryParam.getId()).get();
         if (categoryParam.getCategroyname()!=null&&categoryParam.getCategroyname()!=""){
             category.setCategroyname(categoryParam.getCategroyname());
+
+        }
+        if (categoryParam.getCategroyrank()!=null){
+            category.setCategroyrank(categoryParam.getCategroyrank());
+        }
+        if (categoryParam.getIcon()!=null&&categoryParam.getIcon()!=""){
+            category.setIcon(categoryParam.getIcon());
             categoryRepository.saveAndFlush(category);
             return true;
         }

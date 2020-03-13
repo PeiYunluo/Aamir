@@ -1,11 +1,18 @@
 package Aamir.controller.user;
 
+import Aamir.model.dto.AjaxResultPage;
+import Aamir.model.dto.PostDTO;
 import Aamir.model.dto.Result;
 import Aamir.model.entity.Post;
+import Aamir.model.params.PostListParam;
 import Aamir.model.params.PostSaveParam;
 import Aamir.service.*;
 import Aamir.utils.CollectionUtils;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
@@ -68,5 +75,18 @@ public class PostController {
         result.setResultCode(501);
         result.setMessage("未增加post tag category");
         return null;
+    }
+
+
+    @ResponseBody
+    @GetMapping("/list")
+    @ApiOperation("vue get post list paging")
+    public AjaxResultPage<Post> getPostlist(PostListParam postListParam){
+        Pageable pageable = PageRequest.of(postListParam.getPage() - 1, postListParam.getLimit());
+        Page<Post> page = postService.getPosts(pageable);
+        AjaxResultPage<Post> postAjaxResultPage = new AjaxResultPage<>();
+        postAjaxResultPage.setData(page.getContent());
+        postAjaxResultPage.setCount(page.getTotalPages());
+        return postAjaxResultPage;
     }
 }

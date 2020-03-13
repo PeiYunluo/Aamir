@@ -8,6 +8,7 @@ import Aamir.model.enums.HttpStatus;
 import Aamir.model.params.TaglistParam;
 import Aamir.service.TagService;
 import Aamir.utils.ResultGenerator;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -34,7 +35,18 @@ public class TagController {
     }
 
     @ResponseBody
+    @GetMapping("/getAll")
+    @ApiOperation("get all tags")
+    public Result<Tag> getAll() {
+        //得到所有未经删除的tag
+        List<Tag> list = tagService.getAlltags();
+        return ResultGenerator.getResultByHttp(HttpStatus.OK, list);
+    }
+
+
+    @ResponseBody
     @GetMapping("/getAlltags")
+    @ApiOperation("get all tags(no deleted)")
     public Result<Tag> tagsList() {
         //得到所有未经删除的tag
         List<Tag> list = tagService.getAlltags();
@@ -70,7 +82,7 @@ public class TagController {
 
     @ResponseBody
     @PostMapping("/deleteTag")
-    public Result deleteTag(Tag tag) {
+    public Result deleteTag(@RequestBody Tag tag) {
         boolean flag = tagService.deleteTagbyid(tag.getId());
         if (flag) {
             return ResultGenerator.getResultByHttp(HttpStatus.OK);
@@ -81,7 +93,7 @@ public class TagController {
     //TODO 字段不可为空的提示
     @ResponseBody
     @PostMapping("/addTag")
-    public Result addTag(Tag tag) {
+    public Result addTag(@RequestBody Tag tag) {
         //tag.setCreateTime(DateUtils.getLocalCurrentDate());
         boolean flag = tagService.saveTag(tag);
         if (flag) {
@@ -90,11 +102,10 @@ public class TagController {
             return ResultGenerator.getResultByHttp(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    //TODO:分页方面  3条数据 2条一页只能显示1页
 
     @ResponseBody
     @PostMapping("/updateTagname")
-    public Result updateTagname(Tag tag) {
+    public Result updateTagname(@RequestBody Tag tag) {
         //tag.setCreateTime(DateUtils.getLocalCurrentDate());
         boolean flag = tagService.updateTagname(tag);
         if (flag) {

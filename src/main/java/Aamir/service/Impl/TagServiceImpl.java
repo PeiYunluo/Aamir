@@ -46,7 +46,7 @@ public class TagServiceImpl implements TagService {
 
     @Override
     public Boolean saveTag(Tag tag) {
-        if(tag.getName()!=null){
+        if(tag.getName()!=null || tag.getName()!=""){
             tagRepository.saveAndFlush(tag);
             return true;
         }

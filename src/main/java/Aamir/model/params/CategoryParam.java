@@ -14,4 +14,5 @@ public class CategoryParam {
     private String categroyname;
     private Boolean deleted;
     private Integer categroyrank;
+    private String icon;
 }

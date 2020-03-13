@@ -107,7 +107,6 @@ public class UserController {
         return result;
     }
 
-
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     @ApiOperation("logout")
     @ResponseBody
