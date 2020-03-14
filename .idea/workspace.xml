@@ -2,28 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f64cae66-e073-435a-a8d0-5239fb4ba7d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Aamir/model/params/PostUpdateParam.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/PostController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/Post.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/PostCategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/PostCategoryRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/PostTagRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/PostTagRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/model/entity/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/model/entity/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/repository/PostCategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/repository/PostCategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/repository/PostTagRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/repository/PostTagRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/PostCategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/PostCategoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/PostServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/PostTagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/PostTagServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/PostCategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/PostCategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/PostTagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/PostTagService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +211,8 @@
       <workItem from="1583972321602" duration="19984000" />
       <workItem from="1584007619199" duration="3600000" />
       <workItem from="1584022943807" duration="5327000" />
-      <workItem from="1584060114736" duration="35693000" />
+      <workItem from="1584060114736" duration="36603000" />
+      <workItem from="1584144958011" duration="7040000" />
     </task>
     <servers />
   </component>
@@ -249,10 +240,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1582522375432" />
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1584108502993">
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1584149883098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1584108502993" />
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1584149883098" />
     <state x="447" y="341" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1582941030522">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -269,54 +260,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="593" y="295" width="373" height="234" key="Github.CreateGistDialog/0.0.1536.824@0.0.1536.824" timestamp="1584109925485" />
-    <state width="1493" height="260" key="GridCell.Tab.0.bottom" timestamp="1584109828653">
+    <state width="1493" height="240" key="GridCell.Tab.0.bottom" timestamp="1584151197217">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584109828653" />
-    <state width="1493" height="260" key="GridCell.Tab.0.center" timestamp="1584109828653">
+    <state width="1493" height="240" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584151197217" />
+    <state width="1493" height="240" key="GridCell.Tab.0.center" timestamp="1584151197216">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584109828653" />
-    <state width="1493" height="260" key="GridCell.Tab.0.left" timestamp="1584109828653">
+    <state width="1493" height="240" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584151197216" />
+    <state width="1493" height="240" key="GridCell.Tab.0.left" timestamp="1584151197216">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584109828653" />
-    <state width="1493" height="260" key="GridCell.Tab.0.right" timestamp="1584109828653">
+    <state width="1493" height="240" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584151197216" />
+    <state width="1493" height="240" key="GridCell.Tab.0.right" timestamp="1584151197217">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584109828653" />
-    <state width="1493" height="260" key="GridCell.Tab.1.bottom" timestamp="1584110050259">
+    <state width="1493" height="240" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584151197217" />
+    <state width="1493" height="240" key="GridCell.Tab.1.bottom" timestamp="1584151197217">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584110050259" />
-    <state width="1493" height="260" key="GridCell.Tab.1.center" timestamp="1584110050259">
+    <state width="1493" height="240" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584151197217" />
+    <state width="1493" height="240" key="GridCell.Tab.1.center" timestamp="1584151197217">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1584110050259" />
-    <state width="1493" height="260" key="GridCell.Tab.1.left" timestamp="1584110050258">
+    <state width="1493" height="240" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1584151197217" />
+    <state width="1493" height="240" key="GridCell.Tab.1.left" timestamp="1584151197217">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1584110050258" />
-    <state width="1493" height="260" key="GridCell.Tab.1.right" timestamp="1584110050259">
+    <state width="1493" height="240" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1584151197217" />
+    <state width="1493" height="240" key="GridCell.Tab.1.right" timestamp="1584151197217">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1584110050259" />
-    <state width="1493" height="260" key="GridCell.Tab.2.bottom" timestamp="1584109828460">
+    <state width="1493" height="240" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1584151197217" />
+    <state width="1493" height="260" key="GridCell.Tab.2.bottom" timestamp="1584112851595">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584109828460" />
-    <state width="1493" height="260" key="GridCell.Tab.2.center" timestamp="1584109828460">
+    <state width="1493" height="260" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584112851595" />
+    <state width="1493" height="260" key="GridCell.Tab.2.center" timestamp="1584112851595">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1584109828460" />
-    <state width="1493" height="260" key="GridCell.Tab.2.left" timestamp="1584109828460">
+    <state width="1493" height="260" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1584112851595" />
+    <state width="1493" height="260" key="GridCell.Tab.2.left" timestamp="1584112851595">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1584109828460" />
-    <state width="1493" height="260" key="GridCell.Tab.2.right" timestamp="1584109828460">
+    <state width="1493" height="260" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1584112851595" />
+    <state width="1493" height="260" key="GridCell.Tab.2.right" timestamp="1584112851595">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1584109828460" />
+    <state width="1493" height="260" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1584112851595" />
     <state x="423" y="121" key="Registry" timestamp="1583125727748">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -325,10 +316,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584011408564" />
-    <state x="461" y="305" key="com.intellij.ide.util.TipDialog" timestamp="1584060136693">
+    <state x="461" y="305" key="com.intellij.ide.util.TipDialog" timestamp="1584144966511">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="461" y="305" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584060136693" />
+    <state x="461" y="305" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584144966511" />
     <state x="564" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584011349534">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

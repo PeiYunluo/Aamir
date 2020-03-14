@@ -19,4 +19,5 @@ public interface PostService {
     boolean switchComment(Integer postid);
     Post updatePost(PostUpdateParam postUpdateParam);
     boolean switchstatus(Integer postid);
+    Post getPostbyid(Integer id);
 }

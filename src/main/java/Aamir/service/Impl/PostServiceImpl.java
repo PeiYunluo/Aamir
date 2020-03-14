@@ -118,4 +118,10 @@ public class PostServiceImpl implements PostService {
         }
        return false;
     }
+
+    @Override
+    public Post getPostbyid(Integer id) {
+        Post post = postRepository.findById(id).get();
+        return post;
+    }
 }

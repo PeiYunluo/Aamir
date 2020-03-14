@@ -94,6 +94,27 @@ public class PostController {
     }
 
     @ResponseBody
+    @GetMapping("/getPostbyid")
+    @ApiOperation("vue get post by postid")
+    public Result getPostbyid(Integer id){
+        Post post = postService.getPostbyid(id);
+        List<Integer> list1 = postTagService.getTagsidbyid(id);
+        List<Integer> list2 = postCategoryService.getCategoriesidbyid(id);
+        PostDTO postDTO = new PostDTO();
+        postDTO.setId(post.getId());
+        postDTO.setTitle(post.getTitle());
+        postDTO.setStatus(post.getStatus());
+        postDTO.setUrl(post.getUrl());
+        postDTO.setOriginalContent(post.getOriginalContent());
+        postDTO.setSummary(post.getSummary());
+        postDTO.setDisallowComment(post.getDisallowComment());
+        postDTO.setDeleted(post.getDeleted());
+        postDTO.setTagsid(list1);
+        postDTO.setCategoriesid(list2);
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,postDTO);
+    }
+
+    @ResponseBody
     @PostMapping("/delete")
     @ApiOperation("vue deleted")
     public Result deleteTag(@RequestBody Post post) {
