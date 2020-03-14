@@ -97,13 +97,6 @@ public class Comment extends BaseEntity {
     @Override
     public void prePersist() {
         super.prePersist();
-//        if (ServiceUtils.isEmptyId(id)) {
-//            id = null;
-//        }
-//
-//        if (ServiceUtils.isEmptyId(parentId)) {
-//            parentId = 0L;
-//        }
         id = null;
 
         if (ipAddress == null) {
