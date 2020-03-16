@@ -26,11 +26,9 @@ public class MailController {
     @Async
     public void sendSimpleEmail()  {
         try {
-            mailService.sendSimpleEmail("peiyunluo@icloud.com", "测试邮件题目", "测试邮件内容");
+            mailService.sendSimpleEmail("peiyunluo@icloud.com", "评论审核", "您有新的评论需要审核");
         } catch(Exception e){
             logger.info("Controller异常");
         }
     }
-
-
 }

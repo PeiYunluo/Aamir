@@ -1,5 +1,7 @@
 package Aamir.service.Impl;
 
+import Aamir.model.entity.AamirConfig;
+import Aamir.repository.AamirConfigRepository;
 import Aamir.service.MailService;
 import cn.hutool.extra.mail.Mail;
 import org.slf4j.Logger;
@@ -15,6 +17,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MailServiceImpl implements MailService {
+
+    @Autowired
+    private AamirConfigRepository aamirConfigRepository;
+
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 
@@ -23,12 +29,16 @@ public class MailServiceImpl implements MailService {
 
     @Override
     public void sendSimpleEmail(String to, String subject, String content) {
+        AamirConfig aamirConfighost = aamirConfigRepository.findByConfigfieldAndAndConfigname("QQMail","Host");
+        AamirConfig aamirConfigname = aamirConfigRepository.findByConfigfieldAndAndConfigname("QQMail","Username");
+        AamirConfig aamirConfigpassword = aamirConfigRepository.findByConfigfieldAndAndConfigname("QQMail","Password");
+        AamirConfig aamirConfigencoding = aamirConfigRepository.findByConfigfieldAndAndConfigname("QQMail","DefaultEncoding");
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-        javaMailSender.setHost("smtp.qq.com");
-        javaMailSender.setPassword("ysnoctwpglyybiai");
-        javaMailSender.setUsername("229047180@qq.com");
-        javaMailSender.setDefaultEncoding("UTF-8");
-        simpleMailMessage.setFrom("peiyunluo" + "<" + "229047180@qq.com" + ">");
+        javaMailSender.setHost(aamirConfighost.getConfigvalue());
+        javaMailSender.setPassword(aamirConfigpassword.getConfigvalue());
+        javaMailSender.setUsername(aamirConfigname.getConfigvalue());
+        javaMailSender.setDefaultEncoding(aamirConfigencoding.getConfigvalue());
+        simpleMailMessage.setFrom("Aamir-Blog" + "<" + aamirConfigname.getConfigvalue() + ">");
         simpleMailMessage.setTo(to);
         simpleMailMessage.setSubject(subject);
         simpleMailMessage.setText(content);

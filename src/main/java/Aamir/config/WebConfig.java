@@ -32,8 +32,8 @@ public class WebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         System.out.println("addInterceptors");
         registry.addInterceptor(new JwtInterceptor())
-                .addPathPatterns("/tag/**","/category/**","/link/**")
-                .excludePathPatterns("/user/**");
+                .addPathPatterns("/tag/**","/category/**","/link/**","/comment/**")
+                .excludePathPatterns("/user/**","/comment/addComment");
         System.out.println("addInterceptors___________________)");
     }
     /**

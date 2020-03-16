@@ -2,8 +2,13 @@ package Aamir.repository;
 
 
 import Aamir.model.entity.Post;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * @author peiyunluo@icloud.com
@@ -11,4 +16,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface PostRepository  extends JpaRepository<Post,Integer> {
+    List<Post> findAllById(Iterator<Integer> iterator);
 }

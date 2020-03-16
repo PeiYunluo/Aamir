@@ -18,5 +18,8 @@ public interface PostTagRepository  extends JpaRepository<PostTag,Integer> {
 
     boolean existsByPostIdAndTagId(Integer postid,Integer tagid);
 
+    List<PostTag> findAllByTagId(Integer tagId);
+
+
 
 }
