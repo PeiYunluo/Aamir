@@ -25,7 +25,7 @@ public class Comment extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private Integer id;
 
     /**
      * Commentator's name.
@@ -59,6 +59,8 @@ public class Comment extends BaseEntity {
 
     /**
      * Comment status.
+     * 0 未过审核
+     * 1 过审核
      */
     //TODO
     @Column(name = "status", columnDefinition = "int default 1")
@@ -72,7 +74,10 @@ public class Comment extends BaseEntity {
 
     /**
      * Allow notification.
+     * true 允许通知
+     * false 不允许通知
      */
+
     @Column(name = "allow_notification", columnDefinition = "tinyint default 1")
     private Boolean allowNotification;
 
@@ -109,7 +114,7 @@ public class Comment extends BaseEntity {
 
 
         if (status == null) {
-           status = 1;
+           status = 0;
         }
 
 

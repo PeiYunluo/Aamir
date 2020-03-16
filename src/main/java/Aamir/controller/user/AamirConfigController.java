@@ -2,7 +2,9 @@ package Aamir.controller.user;
 
 import Aamir.model.dto.Result;
 import Aamir.model.entity.AamirConfig;
+import Aamir.model.enums.HttpStatus;
 import Aamir.service.AamirConfigService;
+import Aamir.utils.ResultGenerator;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,20 +24,21 @@ public class AamirConfigController {
     @ResponseBody
     @ApiOperation("get options list")
     public Result getAll(){
-        return null;
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,aamirConfigService.getAllOptions());
     }
 
     @PostMapping("/editOption")
     @ResponseBody
     @ApiOperation("edit option")
     public  Result editOption(@RequestBody AamirConfig aamirConfig){
-        return null;
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,aamirConfigService.modifyOptionbyid(aamirConfig));
     }
 
-    @PostMapping("/addOption")
+    @PostMapping("/findOption")
     @ResponseBody
     @ApiOperation("add option")
-    public  Result addOption(@RequestBody AamirConfig aamirConfig){
-        return null;
+    public Result findOptionbyfieldandname(@RequestBody AamirConfig aamirConfig){
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,aamirConfigService.findbynameadnfield(aamirConfig.getConfigfield(),aamirConfig.getConfigname()));
     }
+
 }

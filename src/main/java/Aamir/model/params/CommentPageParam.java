@@ -1,6 +1,7 @@
 package Aamir.model.params;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 /**
@@ -9,12 +10,11 @@ import lombok.ToString;
  */
 @Data
 @ToString
-public class CommentPageParam {
-    Integer page;   //当前页码
 
-    Integer limit;  //每页显示
-
-    String sort;
-
-    Integer id;
+//TODO:why
+@EqualsAndHashCode(callSuper=false)
+public class CommentPageParam extends PageParam {
+    Boolean deleted;
+    Integer status;
+    Boolean allowNotification;
 }
