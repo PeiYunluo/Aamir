@@ -18,4 +18,5 @@ public interface TagService {
     Boolean deleteTagbyid(Integer id);
     Boolean saveTag(Tag tag);
     Boolean updateTagname(Tag tag);
+    Tag getTagbyid(Integer id);
 }

@@ -1,7 +1,9 @@
 package Aamir.service;
 
+import Aamir.model.entity.Category;
 import Aamir.model.entity.Link;
 import Aamir.model.entity.Post;
+import Aamir.model.entity.Tag;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -17,5 +19,9 @@ public interface MiscService {
     List<Integer> findallpostsbycategoryid(Integer categoryid);
     List<Link> getAlllinks();
     List<Post> getAllpostsbypostid(List<Integer> list, Pageable pageable);
+    List<Tag> getAlltagsbydeleted();
+    List<Category> getAllcategoriesbydeleted();
+    Post findPostbyid(Integer id);
+    List<Tag> getAlltagsbypostid(Integer id);
     //List<Post> getAllpostsbypostid_cate(List<Integer> list, Pageable pageable);
 }

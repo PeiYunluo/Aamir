@@ -7,12 +7,14 @@ import Aamir.model.entity.Tag;
 import Aamir.model.enums.HttpStatus;
 import Aamir.model.params.miscParams.CategoryPageParam;
 import Aamir.model.params.miscParams.TagPageParam;
+import Aamir.repository.PostTagRepository;
 import Aamir.service.*;
+import Aamir.utils.MarkdownUtils;
 import Aamir.utils.PageUtils;
 import Aamir.utils.ResultGenerator;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
@@ -33,6 +35,10 @@ public class MiscController {
 
     @Autowired
     private MiscService miscService;
+    @Autowired
+    private PostTagService postTagService;
+    @Autowired
+    private TagService tagService;
 
 
     @GetMapping("/fetchAllpostsBytagid")
@@ -72,7 +78,44 @@ public class MiscController {
     }
 
 
+    @GetMapping("/getalltags")
+    @ResponseBody
+    public Result fetchAlltags(){
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,miscService.getAlltagsbydeleted());
+    }
 
+    @GetMapping("/getallcategories")
+    @ResponseBody
+    public Result fetchAllcategories(){
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,miscService.getAllcategoriesbydeleted());
+    }
 
+    @GetMapping("/getPostbyid")
+    @ResponseBody
+    public Result fetchOnePostbyid(Integer id){
+        Post post = miscService.findPostbyid(id);
+        if (post.getDeleted()!=true){
+            post.setOriginalContent(MarkdownUtils.mdToHtml(post.getOriginalContent()));
+            return ResultGenerator.getResultByHttp(HttpStatus.OK,post);
+        } else return ResultGenerator.getResultByHttp(HttpStatus.OK,"无此文章");
 
+    }
+
+    //TODO:考虑删除的情况 删除tag时自动将tagpost表置为删除
+    //TODO:postcategory 置为删除
+    //TODO:考虑同步状态
+    @GetMapping("/getAlltagsbypostid")
+    @ResponseBody
+    public Result fetchAlltagsbypostid(Integer id){
+        List<Integer> tagsid = postTagService.getTagsidbyid(id);
+
+        List<Tag> newtags = new ArrayList<>();
+        for (Integer tagid:tagsid
+             ) {
+          if (tagService.getTagbyid(tagid).getDeleted()!=true){
+              newtags.add(tagService.getTagbyid(tagid));
+          }
+        }
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,newtags);
+    }
 }

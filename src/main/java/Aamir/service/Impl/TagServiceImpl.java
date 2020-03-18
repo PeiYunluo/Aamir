@@ -65,4 +65,9 @@ public class TagServiceImpl implements TagService {
      else
          return false;
     }
+
+    @Override
+    public Tag getTagbyid(Integer id) {
+        return tagRepository.findById(id).get();
+    }
 }

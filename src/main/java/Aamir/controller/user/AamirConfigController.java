@@ -36,7 +36,7 @@ public class AamirConfigController {
 
     @PostMapping("/findOption")
     @ResponseBody
-    @ApiOperation("add option")
+    @ApiOperation("find option")
     public Result findOptionbyfieldandname(@RequestBody AamirConfig aamirConfig){
         return ResultGenerator.getResultByHttp(HttpStatus.OK,aamirConfigService.findbynameadnfield(aamirConfig.getConfigfield(),aamirConfig.getConfigname()));
     }

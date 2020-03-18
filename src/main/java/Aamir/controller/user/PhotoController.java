@@ -4,6 +4,7 @@ import Aamir.model.dto.QiniuImgDTO;
 import Aamir.model.dto.Result;
 import Aamir.model.entity.Photo;
 import Aamir.model.enums.HttpStatus;
+import Aamir.service.AamirConfigService;
 import Aamir.service.PhotoService;
 import Aamir.upload.QinniuUpload;
 import Aamir.utils.ResultGenerator;
@@ -23,14 +24,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class PhotoController {
     @Autowired
     private PhotoService photoService;
+    @Autowired
+    private AamirConfigService aamirConfigService;
+
 
     @GetMapping("/qiniu/getToken")
     @ApiOperation("get qiniu token")
     @ResponseBody
     public Result getToken(){
+        String accessKey = aamirConfigService.findbynameadnfield("Qiniu","accessKey").getConfigvalue();
+        String secretKey = aamirConfigService.findbynameadnfield("Qiniu","secretKey").getConfigvalue();
+        String bucket= aamirConfigService.findbynameadnfield("Qiniu","bucket").getConfigvalue();
         QinniuUpload qinniuUpload = new QinniuUpload();
         QiniuImgDTO qiniuImgDTO = new QiniuImgDTO();
-        qiniuImgDTO.setToken(qinniuUpload.getToken());
+        qiniuImgDTO.setToken(qinniuUpload.getToken(accessKey,secretKey,bucket));
         long newMillis = System.currentTimeMillis();
         qiniuImgDTO.setKey(String.valueOf(newMillis));
         Photo photo = new Photo();

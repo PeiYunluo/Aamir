@@ -20,5 +20,6 @@ public interface TagRepository extends JpaRepository<Tag,Integer>, JpaSpecificat
     List<Tag> findAllByDeleted(Boolean tagdeleted);
     Page<Tag> findAll(Pageable pageable);
     Optional<Tag> findById(Integer id);
+    Long countByDeleted(Boolean deleted);
 
 }

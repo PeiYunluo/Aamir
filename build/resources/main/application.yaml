@@ -48,10 +48,17 @@ spring:
     multipart:
       max-file-size: 10240MB
       max-request-size: 10240MB
-  thymeleaf:
-    prefix: classpath:/templates/
+  freemarker:
+    template-loader-path: classpath:/templates
+    suffix: .ftl
   mvc:
-    static-path-pattern: /static/X-admin/**
+    static-path-pattern: /static/**
+#  thymeleaf:
+#    prefix: classpath:/templates/
+#  mvc:
+#    static-path-pattern: /static/X-admin/**
+
+
 #  mail:
 #    host: smtp.qq.com
 #    username: 229047180@qq.com

@@ -24,6 +24,7 @@ public class PostTagServiceImpl implements PostTagService {
     @Override
     public List<Tag> getAlltags(List<Integer> list) {
        // List<Tag> tags = postTagRepository.findAllById(list);
+
         return  null;
     }
 

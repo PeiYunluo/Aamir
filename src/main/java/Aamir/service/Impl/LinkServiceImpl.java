@@ -58,6 +58,7 @@ public class LinkServiceImpl implements LinkService {
             oldlink.setName(link.getName());
             oldlink.setUrl(link.getUrl());
             oldlink.setDescription(link.getDescription());
+            oldlink.setLogo(link.getLogo());
             linkRepository.saveAndFlush(oldlink);
             return true;
         } catch (Exception e) {

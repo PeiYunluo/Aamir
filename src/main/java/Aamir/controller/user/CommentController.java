@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/comment")
 @Controller
 public class CommentController {
+
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private CommentService commentService;
@@ -70,6 +71,7 @@ public class CommentController {
     @ApiOperation("add comment")
     @Async
     public Result addComment(@RequestBody Comment comment) {
+        //TODO：是否开启邮件通知 和 wechat公众号通知
         try {
             mailService.sendSimpleEmail("peiyunluo@icloud.com", "评论审核", "您有新的评论需要审核");
         } catch (Exception e) {

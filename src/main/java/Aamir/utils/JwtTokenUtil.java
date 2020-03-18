@@ -66,8 +66,7 @@ public class JwtTokenUtil {
         String s= createJWT("name", "userid", "Hello World");
         System.out.println(s);
         System.out.println(parseJWT(s));
-        QinniuUpload qinniuUpload = new QinniuUpload();
-        String token = qinniuUpload.getToken();
+        System.out.println(MarkdownUtils.mdToHtml("# h1 ## h2"));
     }
 
 }

@@ -1,9 +1,6 @@
 package Aamir.service.Impl;
 
-import Aamir.model.entity.Link;
-import Aamir.model.entity.Post;
-import Aamir.model.entity.PostCategory;
-import Aamir.model.entity.PostTag;
+import Aamir.model.entity.*;
 import Aamir.repository.*;
 import Aamir.service.MiscService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +27,10 @@ public class MiscServiceImpl implements MiscService {
     private CommentRepository commentRepository;
     @Autowired
     private LinkRepository linkRepository;
-
+    @Autowired
+    private TagRepository tagRepository;
+    @Autowired
+    private CategoryRepository categoryRepository;
 
     @Override
     public List<Integer> findallpostsbytagid(Integer tagid) {
@@ -77,4 +77,24 @@ public class MiscServiceImpl implements MiscService {
     }
 
 
+    @Override
+    public List<Tag> getAlltagsbydeleted() {
+        return tagRepository.findAllByDeleted(false);
+    }
+
+    @Override
+    public List<Category> getAllcategoriesbydeleted() {
+        return categoryRepository.findAllByDeleted(false);
+    }
+
+    @Override
+    public Post findPostbyid(Integer id) {
+        return postRepository.findById(id).get();
+    }
+
+    //TODO
+    @Override
+    public List<Tag> getAlltagsbypostid(Integer id) {
+        return null;
+    }
 }
