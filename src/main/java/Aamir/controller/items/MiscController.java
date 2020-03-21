@@ -1,13 +1,13 @@
 package Aamir.controller.items;
 
+import Aamir.model.dto.CommentDTO;
 import Aamir.model.dto.Result;
+import Aamir.model.entity.Comment;
 import Aamir.model.entity.Post;
-import Aamir.model.entity.PostCategory;
 import Aamir.model.entity.Tag;
 import Aamir.model.enums.HttpStatus;
 import Aamir.model.params.miscParams.CategoryPageParam;
 import Aamir.model.params.miscParams.TagPageParam;
-import Aamir.repository.PostTagRepository;
 import Aamir.service.*;
 import Aamir.utils.MarkdownUtils;
 import Aamir.utils.PageUtils;
@@ -18,9 +18,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +37,8 @@ public class MiscController {
     private PostTagService postTagService;
     @Autowired
     private TagService tagService;
+    @Autowired
+    private PostService postService;
 
 
     @GetMapping("/fetchAllpostsBytagid")
@@ -118,4 +118,47 @@ public class MiscController {
         }
         return ResultGenerator.getResultByHttp(HttpStatus.OK,newtags);
     }
+
+    @GetMapping("/getAllposts")
+    @ResponseBody
+    public Result fetchAllposts(){
+        List<Post> postList = miscService.getAllposts();
+        List<Post> newpostList = new ArrayList<>();
+        for (Post post:postList
+             ) {
+            if (post.getDeleted()!=true)
+            {
+                newpostList.add(post);
+            }
+        }
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,newpostList);
+    }
+    //根据postid拿到所有评论内容
+    //根据每个parentid 拿到reply列表
+    @GetMapping("/getAllcomments")
+    @ResponseBody
+    public Result fetchAllcomments(Integer id){
+        List<CommentDTO> commentDTOList = new ArrayList<>();
+        List<Comment> commentList = miscService.getAllcommentsbypostid(id);
+        for (Comment comment:commentList
+             ) {
+            CommentDTO commentDTO = new CommentDTO();
+            commentDTO.setComment(comment);
+            commentDTO.setReplycomments(miscService.getAllcommentsbypostidandparentid(id,comment.getId()));
+            commentDTOList.add(commentDTO);
+        }
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,commentDTOList);
+    }
+
+
+    //TODO:变成param
+    @PostMapping("/addComment")
+    @ResponseBody
+    public Result addComment(@RequestBody Comment comment){
+        if (miscService.addComment(comment)){
+            return ResultGenerator.getResultByHttp(HttpStatus.OK,"增加成功");
+        }
+        return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST,"增加失败");
+    }
+
 }

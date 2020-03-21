@@ -63,7 +63,7 @@ public class Comment extends BaseEntity {
      * 1 过审核
      */
     //TODO
-    @Column(name = "status", columnDefinition = "int default 1")
+    @Column(name = "status", columnDefinition = "int default 0")
     private Integer status;
 
     /**
@@ -96,8 +96,8 @@ public class Comment extends BaseEntity {
     /**
      * Parent comment.
      */
-    @Column(name = "parent_id", columnDefinition = "bigint default 0")
-    private Long parentId;
+    @Column(name = "parent_id", columnDefinition = "int default 0")
+    private Integer parentId;
 
     @Override
     public void prePersist() {
@@ -127,7 +127,7 @@ public class Comment extends BaseEntity {
         }
 
         if (parentId == null){
-            parentId =0L;
+            parentId =0;
         }
     }
 

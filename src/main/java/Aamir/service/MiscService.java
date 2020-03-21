@@ -1,9 +1,6 @@
 package Aamir.service;
 
-import Aamir.model.entity.Category;
-import Aamir.model.entity.Link;
-import Aamir.model.entity.Post;
-import Aamir.model.entity.Tag;
+import Aamir.model.entity.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -23,5 +20,9 @@ public interface MiscService {
     List<Category> getAllcategoriesbydeleted();
     Post findPostbyid(Integer id);
     List<Tag> getAlltagsbypostid(Integer id);
+    List<Post> getAllposts();
+    List<Comment> getAllcommentsbypostid(Integer id);
+    List<Comment> getAllcommentsbypostidandparentid(Integer postid,Integer parentid);
+    Boolean addComment(Comment comment);
     //List<Post> getAllpostsbypostid_cate(List<Integer> list, Pageable pageable);
 }

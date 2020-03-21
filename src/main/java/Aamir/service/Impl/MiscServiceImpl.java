@@ -97,4 +97,38 @@ public class MiscServiceImpl implements MiscService {
     public List<Tag> getAlltagsbypostid(Integer id) {
         return null;
     }
+
+    //TODO:
+    @Override
+    public List<Post> getAllposts() {
+        return postRepository.findAll();
+    }
+
+    //验证是否删除及其是否通过审核无父亲评论号码
+    @Override
+    public List<Comment> getAllcommentsbypostid(Integer id) {
+        return commentRepository.findAllByPostIdAndStatusAndDeletedAndParentId(id,1,false,0);
+    }
+
+    @Override
+    public List<Comment> getAllcommentsbypostidandparentid(Integer postid, Integer parentid) {
+        return commentRepository.findAllByPostIdAndStatusAndDeletedAndParentId(postid,1,false,parentid);
+    }
+
+    //判断是否允许
+    @Override
+    public Boolean addComment(Comment comment) {
+        if (postRepository.findById(comment.getPostId()).get().getDisallowComment()==false){
+            if ((comment.getAuthor() != null && comment.getAuthor() !="")
+                    && (comment.getEmail() !=null && comment.getEmail() !="")
+                    && (comment.getContent() !=null && comment.getContent() !="")
+                    && (comment.getPostId() !=null && comment.getPostId()!= 0)){
+                commentRepository.saveAndFlush(comment);
+                return true;
+            } else
+                return false;
+        }
+
+    return false;
+    }
 }

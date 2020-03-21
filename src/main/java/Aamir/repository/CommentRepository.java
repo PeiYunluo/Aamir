@@ -18,4 +18,7 @@ public interface CommentRepository extends JpaRepository<Comment,Integer> {
     Page<Comment> findAllByDeleted(Boolean deleted,Pageable pageable);
     Page<Comment> findAllByAllowNotification(Boolean notification,Pageable pageable);
     Page<Comment> findAllByStatus(Integer status,Pageable pageable);
+    List<Comment> findAllByPostId(Integer id);
+
+    List<Comment> findAllByPostIdAndStatusAndDeletedAndParentId(Integer postid,Integer status,Boolean deleted,Integer parentid);
 }
