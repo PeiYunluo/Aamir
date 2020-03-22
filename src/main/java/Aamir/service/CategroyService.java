@@ -17,4 +17,5 @@ public interface CategroyService {
     Boolean deleteCategroybyid(Integer id);
     Boolean saveCategroy(Category category);
     Boolean updateCategroyname(CategoryParam categoryParam);
+    Long getcountsofcate();
 }

@@ -19,4 +19,6 @@ public interface PostRepository  extends JpaRepository<Post,Integer> {
     List<Post> findAllById(Iterator<Integer> iterator);
     Long countByDeleted(Boolean delete);
     Long countByStatus(Integer status);
+    List<Post> findAllByDeletedAndStatus(Boolean deleted,Integer status);
+
 }

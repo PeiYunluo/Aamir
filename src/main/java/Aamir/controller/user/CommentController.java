@@ -18,6 +18,8 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @author peiyunluo@icloud.com
  * @date 2020/3/14 21:54
@@ -66,6 +68,19 @@ public class CommentController {
         return ResultGenerator.getResultByHttp(HttpStatus.OK, commentService.getCommentsbynotification(commentPageParam.getAllowNotification(), pageable).getContent());
     }
 
+    @GetMapping("/clearNotification")
+    @ResponseBody
+    @ApiOperation("get comments list")
+    public Result clearNotification() {
+        List<Comment> list = commentService.getAllcommentsbynotification(true);
+        for (Comment comment:list
+             ) {
+            comment.setAllowNotification(false);
+            commentService.swichNotification(comment.getId());
+        }
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,"清空成功");
+    }
+
     @PostMapping("/addComment")
     @ResponseBody
     @ApiOperation("add comment")
@@ -100,4 +115,7 @@ public class CommentController {
     public Result deletecomment(@RequestBody Comment comment) {
         return ResultGenerator.getResultByHttp(HttpStatus.OK, commentService.deleteCommentbyid(comment.getId()));
     }
+
+
+
 }

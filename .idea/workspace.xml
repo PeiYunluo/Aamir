@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f64cae66-e073-435a-a8d0-5239fb4ba7d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Aamir/model/dto/CommentDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Aamir/utils/AutoSummarization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/DataController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Aamir/model/dto/UserInfoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Aamir/model/params/ResetPasswdParams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/css/app.6cbb06a3.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/css/chunk-1956a76c.a7d65cbe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/css/chunk-340f7a33.fc16d656.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/css/chunk-4ff3a20a.b5402dda.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/app.3c99b62d.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-1956a76c.8029787b.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-2d0efd39.b9d7f69c.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-2d94a1fa.dfce6947.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-340f7a33.aeb4fc7f.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-4ff3a20a.e023fa08.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -11,52 +22,49 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/CategroyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/CategroyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/PostController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/TagController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/TagController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/controller/user/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/dto/AjaxPutPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/dto/AjaxPutPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/dto/AjaxResultPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/dto/AjaxResultPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/dto/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/dto/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/AamirConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/AamirConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/BaseEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/Link.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/Link.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/Post.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/PostCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/PostCategory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/PostTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/PostTag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/Tag.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/Tag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/enums/CommentStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/enums/CommentStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/enums/HttpStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/enums/HttpStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/enums/ValueEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/enums/ValueEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/params/LoginParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/model/params/LoginParam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/AamirConfigRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/AamirConfigRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/CategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/CategoryRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/CommentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/CommentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/LinkRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/LinkRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/PostCategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/PostCategoryRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/PostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/PostRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/PostTagRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/PostTagRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/TagRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/TagRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/UserRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/service/Impl/TagServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/service/Impl/TagServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/service/Impl/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/service/TagService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/service/TagService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/utils/CollectionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/utils/CollectionUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/utils/DateUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/utils/DateUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/utils/ReflectionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/utils/ReflectionUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/utils/ResultGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/utils/ResultGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/utils/SlugUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/utils/SlugUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/config/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/controller/items/MiscController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/controller/items/MiscController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/model/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/model/entity/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/repository/CommentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/CategroyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/CategroyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/CategroyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/CategroyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/CommentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/MiscServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/MiscServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/PostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/TagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/TagServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/MiscService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/MiscService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/TagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/TagService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/css/app.4ad53feb.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/css/chunk-15ec4cfc.b63db90c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/css/chunk-65ba5140.5cd9884a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/css/chunk-d8df6624.b41b891d.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/app.c86025e3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-15ec4cfc.8ff9eb27.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-2d0b212a.acc2665e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-2d0c8bf7.8a68c678.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-2d0cfaef.458c24eb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-2d0e4e1f.46e445b1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-2d0e944c.6036c57c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-2d0efd39.1bee3615.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-2d2104c6.229dd97e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-2d226cab.98496e34.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-2d229205.17c226ad.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-65ba5140.950718f0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-d8df6624.02cf4f0f.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +154,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
@@ -163,16 +172,16 @@
     <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\Aamir\src\main\resources" />
+      <recent name="D:\IdeaProjects\Aamir" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IdeaProjects\Aamir\src\main\resources" />
       <recent name="D:\IdeaProjects\Aamir\src\main\resources\templates" />
       <recent name="D:\IdeaProjects\Aamir\src\main\resources\templates\Aamir" />
       <recent name="D:\IdeaProjects\Aamir" />
       <recent name="D:\IdeaProjects\Aamir\src\main\resources\templates\test" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IdeaProjects\Aamir" />
-      <recent name="D:\IdeaProjects\Aamir\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Application">
@@ -318,12 +327,19 @@
       <workItem from="1584668479630" duration="272000" />
       <workItem from="1584668811790" duration="4282000" />
       <workItem from="1584689995643" duration="2721000" />
-      <workItem from="1584750608736" duration="20280000" />
+      <workItem from="1584750608736" duration="20887000" />
+      <workItem from="1584800515720" duration="8146000" />
+      <workItem from="1584838568898" duration="13569000" />
+      <workItem from="1584853963600" duration="187000" />
+      <workItem from="1584854194251" duration="15868000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#Assign_Data_Sources" timestamp="1582880491038">
@@ -350,10 +366,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="510" y="221" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1584491384785" />
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1584774228235">
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1584869274106">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1584774228235" />
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1584869274106" />
     <state x="447" y="341" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1582941030522">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -374,54 +390,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="593" y="295" width="373" height="234" key="Github.CreateGistDialog/0.0.1536.824@0.0.1536.824" timestamp="1584109925485" />
-    <state width="1493" height="166" key="GridCell.Tab.0.bottom" timestamp="1584781398720">
+    <state width="1493" height="166" key="GridCell.Tab.0.bottom" timestamp="1584870181198">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584781398720" />
-    <state width="1493" height="166" key="GridCell.Tab.0.center" timestamp="1584781398720">
+    <state width="1493" height="166" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584870181198" />
+    <state width="1493" height="166" key="GridCell.Tab.0.center" timestamp="1584870181198">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584781398720" />
-    <state width="1493" height="166" key="GridCell.Tab.0.left" timestamp="1584781398720">
+    <state width="1493" height="166" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584870181198" />
+    <state width="1493" height="166" key="GridCell.Tab.0.left" timestamp="1584870181198">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584781398720" />
-    <state width="1493" height="166" key="GridCell.Tab.0.right" timestamp="1584781398720">
+    <state width="1493" height="166" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584870181198" />
+    <state width="1493" height="166" key="GridCell.Tab.0.right" timestamp="1584870181198">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584781398720" />
-    <state width="1493" height="166" key="GridCell.Tab.1.bottom" timestamp="1584781398721">
+    <state width="1493" height="166" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584870181198" />
+    <state width="1493" height="166" key="GridCell.Tab.1.bottom" timestamp="1584870181199">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584781398721" />
-    <state width="1493" height="166" key="GridCell.Tab.1.center" timestamp="1584781398721">
+    <state width="1493" height="166" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584870181199" />
+    <state width="1493" height="166" key="GridCell.Tab.1.center" timestamp="1584870181199">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1584781398721" />
-    <state width="1493" height="166" key="GridCell.Tab.1.left" timestamp="1584781398720">
+    <state width="1493" height="166" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1584870181199" />
+    <state width="1493" height="166" key="GridCell.Tab.1.left" timestamp="1584870181199">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1584781398720" />
-    <state width="1493" height="166" key="GridCell.Tab.1.right" timestamp="1584781398721">
+    <state width="1493" height="166" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1584870181199" />
+    <state width="1493" height="166" key="GridCell.Tab.1.right" timestamp="1584870181199">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1584781398721" />
-    <state width="1493" height="263" key="GridCell.Tab.2.bottom" timestamp="1584781133476">
+    <state width="1493" height="166" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1584870181199" />
+    <state width="1493" height="263" key="GridCell.Tab.2.bottom" timestamp="1584785283352">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584781133476" />
-    <state width="1493" height="263" key="GridCell.Tab.2.center" timestamp="1584781133476">
+    <state width="1493" height="263" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584785283352" />
+    <state width="1493" height="263" key="GridCell.Tab.2.center" timestamp="1584785283352">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1584781133476" />
-    <state width="1493" height="263" key="GridCell.Tab.2.left" timestamp="1584781133476">
+    <state width="1493" height="263" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1584785283352" />
+    <state width="1493" height="263" key="GridCell.Tab.2.left" timestamp="1584785283352">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1584781133476" />
-    <state width="1493" height="263" key="GridCell.Tab.2.right" timestamp="1584781133476">
+    <state width="1493" height="263" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1584785283352" />
+    <state width="1493" height="263" key="GridCell.Tab.2.right" timestamp="1584785283352">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1584781133476" />
+    <state width="1493" height="263" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1584785283352" />
     <state x="423" y="121" key="Registry" timestamp="1583125727748">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -430,10 +446,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="432" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584587292802" />
-    <state x="461" y="305" key="com.intellij.ide.util.TipDialog" timestamp="1584750703404">
+    <state x="461" y="305" key="com.intellij.ide.util.TipDialog" timestamp="1584854197451">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="461" y="305" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584750703404" />
+    <state x="461" y="305" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584854197451" />
     <state x="564" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584011349534">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -450,16 +466,5 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1584541912798" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Aamir/service/Impl/MiscServiceImpl.java</url>
-          <line>120</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

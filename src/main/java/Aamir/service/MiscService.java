@@ -24,5 +24,8 @@ public interface MiscService {
     List<Comment> getAllcommentsbypostid(Integer id);
     List<Comment> getAllcommentsbypostidandparentid(Integer postid,Integer parentid);
     Boolean addComment(Comment comment);
+    Boolean savenewvisit(Post post);
+    Comment getOne();
+    Post getOnePost();
     //List<Post> getAllpostsbypostid_cate(List<Integer> list, Pageable pageable);
 }

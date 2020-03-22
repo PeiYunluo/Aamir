@@ -41,6 +41,7 @@ public class MiscController {
     private PostService postService;
 
 
+
     @GetMapping("/fetchAllpostsBytagid")
     @ResponseBody
     public Result fetchAllpostsBytagid(TagPageParam tagPageParam){
@@ -94,7 +95,9 @@ public class MiscController {
     @ResponseBody
     public Result fetchOnePostbyid(Integer id){
         Post post = miscService.findPostbyid(id);
-        if (post.getDeleted()!=true){
+        post.setVisits(post.getVisits()+1);
+        miscService.savenewvisit(post);
+        if (post.getDeleted()!=true&&post.getStatus()==1){
             post.setOriginalContent(MarkdownUtils.mdToHtml(post.getOriginalContent()));
             return ResultGenerator.getResultByHttp(HttpStatus.OK,post);
         } else return ResultGenerator.getResultByHttp(HttpStatus.OK,"无此文章");
@@ -126,7 +129,7 @@ public class MiscController {
         List<Post> newpostList = new ArrayList<>();
         for (Post post:postList
              ) {
-            if (post.getDeleted()!=true)
+            if (post.getDeleted()!=true&&post.getStatus()==1)
             {
                 newpostList.add(post);
             }
@@ -160,5 +163,26 @@ public class MiscController {
         }
         return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST,"增加失败");
     }
+
+
+    @GetMapping("/getAlllinks")
+    @ResponseBody
+    public Result fetchAlllinks(){
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,miscService.getAlllinks());
+    }
+
+
+    @GetMapping("/getOneComment")
+    @ResponseBody
+    public Result getOneComment(){
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,miscService.getOne());
+    }
+
+    @GetMapping("/getOnePost")
+    @ResponseBody
+    public Result getOnePost(){
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,miscService.getOnePost());
+    }
+
 
 }

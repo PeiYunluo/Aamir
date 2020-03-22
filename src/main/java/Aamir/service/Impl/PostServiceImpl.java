@@ -124,4 +124,20 @@ public class PostServiceImpl implements PostService {
         Post post = postRepository.findById(id).get();
         return post;
     }
+
+    @Override
+    public Long getposts() {
+        return postRepository.countByDeleted(false)+postRepository.countByDeleted(true);
+    }
+
+    @Override
+    public Long getthecountofvisits() {
+        List<Post> list=postRepository.findAll();
+        Long visits = 0L;
+        for (Post post:list
+             ) {
+            visits+=post.getVisits();
+        }
+        return visits;
+    }
 }

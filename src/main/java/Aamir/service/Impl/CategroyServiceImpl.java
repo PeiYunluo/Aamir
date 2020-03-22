@@ -70,4 +70,9 @@ public class CategroyServiceImpl implements CategroyService {
         }
         return false;
     }
+
+    @Override
+    public Long getcountsofcate() {
+        return categoryRepository.count();
+    }
 }

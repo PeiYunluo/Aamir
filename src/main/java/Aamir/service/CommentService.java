@@ -1,6 +1,7 @@
 package Aamir.service;
 
 import Aamir.model.entity.Comment;
+import io.swagger.models.auth.In;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -29,5 +30,11 @@ public interface CommentService {
     Boolean modifystatus(Integer commentid);
 
     Boolean addComment(Comment comment);
+
+    Long getNotificationscounts();
+
+    List<Comment> getAllcommentsbynotification(Boolean notifica);
+
+    Boolean swichNotification(Integer id);
 
 }

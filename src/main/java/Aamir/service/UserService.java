@@ -9,5 +9,7 @@ import Aamir.model.entity.User;
 public interface UserService {
     boolean validatePassword(String userId,String oldPwd);
     User getUser(Integer id);
+    Boolean updateUser(User user);
     String test();
+    Boolean modifyPassword(String userId,String newPwd);
 }

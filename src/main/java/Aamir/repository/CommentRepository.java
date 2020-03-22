@@ -21,4 +21,7 @@ public interface CommentRepository extends JpaRepository<Comment,Integer> {
     List<Comment> findAllByPostId(Integer id);
 
     List<Comment> findAllByPostIdAndStatusAndDeletedAndParentId(Integer postid,Integer status,Boolean deleted,Integer parentid);
+
+    Long countByAllowNotification(Boolean allow);
+    List<Comment> findAllByAllowNotification(Boolean notification);
 }

@@ -70,4 +70,9 @@ public class TagServiceImpl implements TagService {
     public Tag getTagbyid(Integer id) {
         return tagRepository.findById(id).get();
     }
+
+    @Override
+    public Long gettheounts() {
+        return tagRepository.count();
+    }
 }

@@ -2,9 +2,11 @@ package Aamir.controller.user;
 
 import Aamir.exception.AamirException;
 import Aamir.model.dto.Result;
+import Aamir.model.dto.UserInfoDTO;
 import Aamir.model.entity.User;
 import Aamir.model.enums.HttpStatus;
 import Aamir.model.params.LoginParam;
+import Aamir.model.params.ResetPasswdParams;
 import Aamir.service.UserService;
 import Aamir.utils.JwtTokenUtil;
 import Aamir.utils.ResultGenerator;
@@ -132,5 +134,35 @@ public class UserController {
         return true;
     }
 
+    @GetMapping("/getUserInfo")
+    @ResponseBody
+    public Result getUserInfo(){
+        //TODO:写死从1号
+        User user = userService.getUser(1);
+        UserInfoDTO userInfoDTO = new UserInfoDTO();
+        userInfoDTO.setId(user.getId());
+        userInfoDTO.setAvatar(user.getAvatar());
+        userInfoDTO.setDescription(user.getDescription());
+        userInfoDTO.setEmail(user.getEmail());
+        userInfoDTO.setNickname(user.getNickname());
+        userInfoDTO.setUsername(user.getUsername());
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,userInfoDTO);
+    }
 
+    @PostMapping("/updateUserInfo")
+    @ResponseBody
+    public Result modifyUserInfo(@RequestBody User user){
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,userService.updateUser(user));
+    }
+
+
+    @PostMapping("/resetPassword")
+    @ResponseBody
+    public Result resetPassword(@RequestBody ResetPasswdParams resetPasswdParams){
+       if (userService.validatePassword(resetPasswdParams.getUsername(),resetPasswdParams.getOldpassword())){
+           if (userService.modifyPassword(resetPasswdParams.getUsername(),resetPasswdParams.getNewpassword())){
+               return ResultGenerator.getResultByHttp(HttpStatus.OK,"修改成功");
+           }
+       }return ResultGenerator.getResultByHttp(HttpStatus.OK,"修改失败");
+    }
 }

@@ -36,4 +36,24 @@ public class UserServiceImpl implements UserService {
     public User getUser(Integer id) {
         return userRepository.findById(id).get();
     }
+
+    @Override
+    public Boolean updateUser(User user) {
+        User olduser = userRepository.findByUsername(user.getUsername());
+        user.setPassword(olduser.getPassword());
+        if (userRepository.saveAndFlush(user)!=null){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public Boolean modifyPassword(String userId, String newPwd) {
+        User olduser = userRepository.findByUsername(userId);
+        olduser.setPassword(newPwd);
+        if (userRepository.saveAndFlush(olduser)!=null){
+            return true;
+        }
+        return false;
+    }
 }

@@ -98,4 +98,22 @@ public class CommentServiceImpl implements CommentService {
         return false;
 
     }
+
+    @Override
+    public Long getNotificationscounts() {
+        return commentRepository.countByAllowNotification(true);
+    }
+
+
+    @Override
+    public List<Comment> getAllcommentsbynotification(Boolean notifica) {
+        List<Comment> list= commentRepository.findAllByAllowNotification(notifica);
+        return list;
+    }
+
+    @Override
+    public Boolean swichNotification(Integer id) {
+        commentRepository.saveAndFlush(commentRepository.findById(id).get());
+        return true;
+    }
 }

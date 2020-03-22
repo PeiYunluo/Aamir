@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @author peiyunluo@icloud.com
@@ -130,5 +131,45 @@ public class MiscServiceImpl implements MiscService {
         }
 
     return false;
+    }
+
+    @Override
+    public Boolean savenewvisit(Post post) {
+        postRepository.saveAndFlush(post);
+        return true;
+    }
+
+
+    @Override
+    public Comment getOne() {
+
+        try {
+            List<Comment> list = commentRepository.findAllByAllowNotification(true);
+            Random random =new Random();
+            Integer integer = random.nextInt(list.size());
+            return list.get(integer);
+        } catch (Exception e){
+            List<Comment> list = commentRepository.findAllByAllowNotification(false);
+            Random random =new Random();
+            Integer integer = random.nextInt(list.size());
+            return list.get(integer);
+        }
+
+    }
+
+    @Override
+    public Post getOnePost() {
+        try {
+            List<Post> list = postRepository.findAllByDeletedAndStatus(false,1);
+            Random random =new Random();
+            Integer integer = random.nextInt(list.size());
+            return list.get(integer);
+        } catch (Exception e){
+            List<Post> list = postRepository.findAllByDeletedAndStatus(true,1);
+            Random random =new Random();
+            Integer integer = random.nextInt(list.size());
+            return list.get(integer);
+        }
+
     }
 }

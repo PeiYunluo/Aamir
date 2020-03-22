@@ -20,4 +20,6 @@ public interface PostService {
     Post updatePost(PostUpdateParam postUpdateParam);
     boolean switchstatus(Integer postid);
     Post getPostbyid(Integer id);
+    Long getposts();
+    Long getthecountofvisits();
 }

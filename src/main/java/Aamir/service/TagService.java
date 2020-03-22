@@ -19,4 +19,5 @@ public interface TagService {
     Boolean saveTag(Tag tag);
     Boolean updateTagname(Tag tag);
     Tag getTagbyid(Integer id);
+    Long gettheounts();
 }
