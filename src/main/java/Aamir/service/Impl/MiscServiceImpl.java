@@ -172,4 +172,10 @@ public class MiscServiceImpl implements MiscService {
         }
 
     }
+
+
+    @Override
+    public Tag getTagbyid(Integer id) {
+        return tagRepository.findById(id).get();
+    }
 }

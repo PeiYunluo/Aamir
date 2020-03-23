@@ -27,5 +27,6 @@ public interface MiscService {
     Boolean savenewvisit(Post post);
     Comment getOne();
     Post getOnePost();
+    Tag getTagbyid(Integer id);
     //List<Post> getAllpostsbypostid_cate(List<Integer> list, Pageable pageable);
 }

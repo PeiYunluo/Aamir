@@ -184,5 +184,10 @@ public class MiscController {
         return ResultGenerator.getResultByHttp(HttpStatus.OK,miscService.getOnePost());
     }
 
+    @GetMapping("/getTagbyid")
+    @ResponseBody
+    public Result fetchTagbyid(Integer tagid){
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,miscService.getTagbyid(tagid));
+    }
 
 }
