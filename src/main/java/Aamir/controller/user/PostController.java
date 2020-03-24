@@ -54,21 +54,27 @@ public class PostController {
             Integer postid = post.getId();
             //维护posttag表
             List<Integer> tagsid = postSaveParam.getTagsid();
+            postTagService.deleteposttagbypostid(postSaveParam.getId());
             if (!CollectionUtils.isEmpty(tagsid)){
                 for (Integer tagid:tagsid
                      ) {
+                    //TODO:无法去除之前的标签
+                    //TODO：根据postid删除所有posttag项目
                     System.out.println(tagid);
-                    postTagService.add(postid,tagid);
+                    if (!postTagService.isexist(postid,tagid))
+                        postTagService.add(postid,tagid);
                 }
                 result.setMessage("tag增加完成");
             }
             //维护postcategory表
+            postCategoryService.deletePostCatebypostid(postSaveParam.getId());
             List<Integer> categoriesid = postSaveParam.getCategoriesid();
             if (!CollectionUtils.isEmpty(categoriesid)){
                 for (Integer categoryid:categoriesid
                      ) {
                     System.out.println(categoryid);
-                    postCategoryService.add(postid,categoryid);
+                    if (!postCategoryService.isexist(postid,categoryid))
+                        postCategoryService.add(postid,categoryid);
                 }
                 result.setMessage("cate and tag增加完成");
             }

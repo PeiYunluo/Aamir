@@ -14,4 +14,5 @@ import java.util.List;
 public interface PostCategoryRepository  extends JpaRepository<PostCategory,Integer> {
     boolean existsByPostIdAndCategoryId(Integer postid,Integer categoryid);
     List<PostCategory> findAllByCategoryId(Integer categoryid);
+    List<PostCategory> findAllByPostId(Integer postid);
 }

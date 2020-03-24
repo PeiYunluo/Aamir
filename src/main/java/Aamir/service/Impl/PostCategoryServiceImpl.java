@@ -45,4 +45,14 @@ public class PostCategoryServiceImpl implements PostCategoryService {
             return true;
         else return false;
     }
+
+    @Override
+    public boolean deletePostCatebypostid(Integer postid) {
+        List<PostCategory> postCategoryList = postCategoryRepository.findAllByPostId(postid);
+        for (PostCategory postcategory:postCategoryList
+             ) {
+            postCategoryRepository.deleteById(postcategory.getId());
+        }
+        return true;
+    }
 }

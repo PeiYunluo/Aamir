@@ -49,12 +49,6 @@ public class UploadController {
         return ResultGenerator.getResultByHttp(HttpStatus.OK,qiniuImgDTO);
     }
 
-    /**
-     * @Description: 用户头像上传
-     * @Param: [httpServletRequest, file]
-     * @return: com.zhulin.blog.util.Result
-     * @date: 2019/8/24 15:15
-     */
     @PostMapping({"/upload/authorImg"})
     @ResponseBody
     public Result upload(HttpServletRequest httpServletRequest, @RequestParam("file") MultipartFile file) throws URISyntaxException {
@@ -80,4 +74,5 @@ public class UploadController {
             return ResultGenerator.getResultByHttp(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 }

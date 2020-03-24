@@ -22,5 +22,5 @@ public interface PostTagRepository  extends JpaRepository<PostTag,Integer> {
     List<PostTag> findAllByTagId(Integer tagId);
 
     List<PostTag> findAllByPostId(Integer postid);
-
+    
 }

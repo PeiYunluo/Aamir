@@ -56,4 +56,14 @@ public class PostTagServiceImpl implements PostTagService {
         return true;
         else return false;
     }
+
+    @Override
+    public boolean deleteposttagbypostid(Integer postid) {
+        List<PostTag> postTagList = postTagRepository.findAllByPostId(postid);
+        for (PostTag postTag:postTagList
+             ) {
+            postTagRepository.deleteById(postTag.getId());
+        }
+        return true;
+    }
 }

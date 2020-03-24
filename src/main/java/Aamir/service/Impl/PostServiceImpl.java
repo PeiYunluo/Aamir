@@ -35,16 +35,17 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public Post saveandupdatePost(PostSaveParam postSaveParam) {
-        Post post = new Post();
-        post.setDisallowComment(postSaveParam.getDisallowComment());
-        post.setOriginalContent(postSaveParam.getOriginalContent());
-        post.setStatus(postSaveParam.getStatus());
-        post.setUrl(postSaveParam.getUrl());
-        post.setDeleted(postSaveParam.getDeleted());
-        post.setTitle(postSaveParam.getTitle());
-        post.setSummary(postSaveParam.getSummary());
+
         //新建并保存
         if (postSaveParam.getId() == null || postSaveParam.getId() == 0){
+            Post post = new Post();
+            post.setDisallowComment(postSaveParam.getDisallowComment());
+            post.setOriginalContent(postSaveParam.getOriginalContent());
+            post.setStatus(postSaveParam.getStatus());
+            post.setUrl(postSaveParam.getUrl());
+            post.setDeleted(postSaveParam.getDeleted());
+            post.setTitle(postSaveParam.getTitle());
+            post.setSummary(postSaveParam.getSummary());
             return postRepository.saveAndFlush(post);
         } else if (postRepository.existsById(postSaveParam.getId())) //查找并保存
             {
@@ -57,7 +58,7 @@ public class PostServiceImpl implements PostService {
                 oldpost.setTitle(postSaveParam.getTitle());
                 oldpost.setSummary(postSaveParam.getSummary());
                 postRepository.saveAndFlush(oldpost);
-                return postRepository.saveAndFlush(post);
+                return postRepository.saveAndFlush(oldpost);
         }
         return null;
     }

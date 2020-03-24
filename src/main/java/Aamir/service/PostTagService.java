@@ -15,4 +15,5 @@ public interface PostTagService {
     PostTag add(Integer postid, Integer tagid);
     List<Integer> getTagsidbyid(Integer postid);
     boolean isexist(Integer postid, Integer tagid);
+    boolean deleteposttagbypostid(Integer postid);
 }

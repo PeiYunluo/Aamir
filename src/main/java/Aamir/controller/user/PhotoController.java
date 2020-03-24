@@ -109,4 +109,46 @@ public class PhotoController {
         }
         return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST,"错误");
     }
+
+        @PostMapping("/uploadmarkdown")
+    @ResponseBody
+    public Result uploadMarkdown(MultipartFile file){
+        //图片写在磁盘D盘
+        String path = "d://uploadFiles/Markdown/";
+        if (file.isEmpty()) {
+            return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST,"文件不能为空");
+        }
+        String fileName = file.getOriginalFilename();
+        logger.info("上传的文件名为：" + fileName);
+        // 获取文件的后缀名
+        String suffixName = fileName.substring(fileName.lastIndexOf("."));
+        logger.info("上传的后缀名为：" + suffixName);
+
+        String filePath = path;
+        String fileUrl = UploadFileUtils.getNewFileName(suffixName);
+        File dest = new File(filePath + fileUrl);
+        System.out.println(dest.getAbsolutePath());
+        // 检测是否存在目录
+        if (!dest.getParentFile().exists()) {
+            dest.getParentFile().mkdirs();
+        }
+        try {
+            System.out.println(file.getInputStream().toString());
+            byte[] bytes = new byte[0];
+            bytes = new byte[file.getInputStream().available()];
+            file.getInputStream().read(bytes);
+            String str = new String(bytes);
+            file.transferTo(dest);
+            System.out.println(str);
+            logger.info("上传成功后的文件路径为：" + filePath + fileName);
+            return ResultGenerator.getResultByHttp(HttpStatus.OK,str);
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST,"错误");
+    }
+
+
 }
