@@ -32,7 +32,24 @@ public class PhotoServiceImpl implements PhotoService {
         List<Photo> photoList = photoRepository.findAll();
         for (Photo photo:photoList
              ) {
-            stringList.add(photo.getUrl());
+            if (photo.getUrl()!=null && !photo.getUrl().equals("")){
+                stringList.add(photo.getUrl());
+            }
+
+        }
+        return stringList;
+    }
+
+    @Override
+    public List<String> getAllPhotosLocalurl() {
+        List<String> stringList = new ArrayList<>();
+        List<Photo> photoList = photoRepository.findAll();
+        for (Photo photo:photoList
+        ) {
+            if (photo.getLocalurl()!=null && !photo.getLocalurl().equals("")){
+                stringList.add(photo.getLocalurl());
+            }
+
         }
         return stringList;
     }

@@ -2,17 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f64cae66-e073-435a-a8d0-5239fb4ba7d0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/app.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/autoload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/waifu-tips.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/waifu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/photos.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/TagRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aamir/repository/TagRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/controller/items/MiscController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/controller/items/MiscController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/MiscServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/MiscServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/MiscService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/MiscService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/AamirConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/AamirConfigController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/PhotoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/controller/user/PhotoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/PhotoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/Impl/PhotoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aamir/service/PhotoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aamir/service/PhotoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dist_visitor/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/css/app.6cbb06a3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/css/chunk-1956a76c.a7d65cbe.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/css/chunk-238c0fdc.a37cd815.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/css/chunk-340f7a33.fc16d656.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/css/chunk-4ff3a20a.b5402dda.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/css/chunk-elementUI.ded27da0.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/css/chunk-libs.887691f5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/app.3c99b62d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-1956a76c.8029787b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-238c0fdc.b1a45a53.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-2d0efd39.b9d7f69c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-2d94a1fa.dfce6947.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-340f7a33.aeb4fc7f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-4ff3a20a.e023fa08.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-elementUI.f0818934.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dist_visitor/static/js/chunk-libs.fa1a1464.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +47,9 @@
   </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="206" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -120,16 +149,16 @@
     <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IdeaProjects\Aamir\src\main\resources" />
-      <recent name="D:\IdeaProjects\Aamir" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IdeaProjects\Aamir\src\main\resources" />
       <recent name="D:\IdeaProjects\Aamir\src\main\resources\templates" />
       <recent name="D:\IdeaProjects\Aamir\src\main\resources\templates\Aamir" />
       <recent name="D:\IdeaProjects\Aamir" />
       <recent name="D:\IdeaProjects\Aamir\src\main\resources\templates\test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\Aamir\src\main\resources" />
+      <recent name="D:\IdeaProjects\Aamir" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Application">
@@ -281,7 +310,9 @@
       <workItem from="1584853963600" duration="187000" />
       <workItem from="1584854194251" duration="16044000" />
       <workItem from="1584929672804" duration="351000" />
-      <workItem from="1584951213047" duration="16501000" />
+      <workItem from="1584951213047" duration="16736000" />
+      <workItem from="1585006876865" duration="8292000" />
+      <workItem from="1585015867825" duration="8527000" />
     </task>
     <servers />
   </component>
@@ -304,10 +335,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="74" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1584241595699" />
-    <state x="499" y="171" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1584534897042">
+    <state x="499" y="171" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1585014154691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="171" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1584534897042" />
+    <state x="499" y="171" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585014154691" />
     <state x="223" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582522375432">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -316,10 +347,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="510" y="221" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1584491384785" />
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1584979998459">
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1585016779970">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1584979998459" />
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1585016779970" />
     <state x="447" y="341" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1582941030522">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -340,54 +371,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="593" y="295" width="373" height="234" key="Github.CreateGistDialog/0.0.1536.824@0.0.1536.824" timestamp="1584109925485" />
-    <state width="1493" height="166" key="GridCell.Tab.0.bottom" timestamp="1584980638111">
+    <state width="1493" height="263" key="GridCell.Tab.0.bottom" timestamp="1585018806025">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584980638111" />
-    <state width="1493" height="166" key="GridCell.Tab.0.center" timestamp="1584980638110">
+    <state width="1493" height="263" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585018806025" />
+    <state width="1493" height="263" key="GridCell.Tab.0.center" timestamp="1585018806024">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584980638110" />
-    <state width="1493" height="166" key="GridCell.Tab.0.left" timestamp="1584980638110">
+    <state width="1493" height="263" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585018806024" />
+    <state width="1493" height="263" key="GridCell.Tab.0.left" timestamp="1585018806024">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584980638110" />
-    <state width="1493" height="166" key="GridCell.Tab.0.right" timestamp="1584980638110">
+    <state width="1493" height="263" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585018806024" />
+    <state width="1493" height="263" key="GridCell.Tab.0.right" timestamp="1585018806025">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584980638110" />
-    <state width="1493" height="166" key="GridCell.Tab.1.bottom" timestamp="1584980638111">
+    <state width="1493" height="263" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585018806025" />
+    <state width="1493" height="263" key="GridCell.Tab.1.bottom" timestamp="1585018805831">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584980638111" />
-    <state width="1493" height="166" key="GridCell.Tab.1.center" timestamp="1584980638111">
+    <state width="1493" height="263" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585018805831" />
+    <state width="1493" height="263" key="GridCell.Tab.1.center" timestamp="1585018805831">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1584980638111" />
-    <state width="1493" height="166" key="GridCell.Tab.1.left" timestamp="1584980638111">
+    <state width="1493" height="263" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585018805831" />
+    <state width="1493" height="263" key="GridCell.Tab.1.left" timestamp="1585018805831">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1584980638111" />
-    <state width="1493" height="166" key="GridCell.Tab.1.right" timestamp="1584980638111">
+    <state width="1493" height="263" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585018805831" />
+    <state width="1493" height="263" key="GridCell.Tab.1.right" timestamp="1585018805831">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="166" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1584980638111" />
-    <state width="1493" height="263" key="GridCell.Tab.2.bottom" timestamp="1584785283352">
+    <state width="1493" height="263" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585018805831" />
+    <state width="1493" height="263" key="GridCell.Tab.2.bottom" timestamp="1585018805832">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584785283352" />
-    <state width="1493" height="263" key="GridCell.Tab.2.center" timestamp="1584785283352">
+    <state width="1493" height="263" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585018805832" />
+    <state width="1493" height="263" key="GridCell.Tab.2.center" timestamp="1585018805832">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1584785283352" />
-    <state width="1493" height="263" key="GridCell.Tab.2.left" timestamp="1584785283352">
+    <state width="1493" height="263" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1585018805832" />
+    <state width="1493" height="263" key="GridCell.Tab.2.left" timestamp="1585018805832">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1584785283352" />
-    <state width="1493" height="263" key="GridCell.Tab.2.right" timestamp="1584785283352">
+    <state width="1493" height="263" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1585018805832" />
+    <state width="1493" height="263" key="GridCell.Tab.2.right" timestamp="1585018805832">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="263" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1584785283352" />
+    <state width="1493" height="263" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1585018805832" />
     <state x="423" y="121" key="Registry" timestamp="1583125727748">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -396,10 +427,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="432" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584587292802" />
-    <state x="461" y="305" key="com.intellij.ide.util.TipDialog" timestamp="1584951230247">
+    <state x="461" y="305" key="com.intellij.ide.util.TipDialog" timestamp="1585015884510">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="461" y="305" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584951230247" />
+    <state x="461" y="305" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585015884510" />
     <state x="564" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584011349534">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -416,5 +447,8 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="66" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1584541912798" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Aamir$Application.ic" NAME="Application Coverage Results" MODIFIED="1585015770263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

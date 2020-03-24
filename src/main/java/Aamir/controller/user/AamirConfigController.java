@@ -27,6 +27,7 @@ public class AamirConfigController {
         return ResultGenerator.getResultByHttp(HttpStatus.OK,aamirConfigService.getAllOptions());
     }
 
+    //TODO:最好整成params
     @PostMapping("/editOption")
     @ResponseBody
     @ApiOperation("edit option")
@@ -34,11 +35,13 @@ public class AamirConfigController {
         return ResultGenerator.getResultByHttp(HttpStatus.OK,aamirConfigService.modifyOptionbyid(aamirConfig));
     }
 
+    //TODO:最好整成params
     @PostMapping("/findOption")
     @ResponseBody
     @ApiOperation("find option")
     public Result findOptionbyfieldandname(@RequestBody AamirConfig aamirConfig){
         return ResultGenerator.getResultByHttp(HttpStatus.OK,aamirConfigService.findbynameadnfield(aamirConfig.getConfigfield(),aamirConfig.getConfigname()));
     }
+
 
 }
