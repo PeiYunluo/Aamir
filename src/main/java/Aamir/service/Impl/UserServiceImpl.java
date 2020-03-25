@@ -1,6 +1,7 @@
 package Aamir.service.Impl;
 
 import Aamir.model.entity.User;
+import Aamir.model.params.ForgotPWDParam;
 import Aamir.repository.UserRepository;
 import Aamir.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,5 +56,18 @@ public class UserServiceImpl implements UserService {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public Boolean forgotPassword(ForgotPWDParam forgotPWDParam) {
+        if (userRepository.existsByUsernameAndNicknameAndEmail(forgotPWDParam.getUsername(),forgotPWDParam.getNickname(),forgotPWDParam.getEmail())){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public User getUserBy(String username, String nickname, String email) {
+        return userRepository.findByUsernameAndNicknameAndEmail(username,nickname,email);
     }
 }

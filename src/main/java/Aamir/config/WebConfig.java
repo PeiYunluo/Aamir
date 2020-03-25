@@ -1,5 +1,6 @@
 package Aamir.config;
 
+import Aamir.security.AllInterceptor;
 import Aamir.security.JwtInterceptor;
 import com.google.common.eventbus.AsyncEventBus;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
@@ -33,7 +34,9 @@ public class WebConfig implements WebMvcConfigurer {
         System.out.println("addInterceptors");
         registry.addInterceptor(new JwtInterceptor())
                 .addPathPatterns("/tag/**","/category/**","/link/**","/comment/**","/post/**")
-                .excludePathPatterns("/user/**","/comment/addComment");
+                .excludePathPatterns("/user/login","/comment/addComment");
+
+
         System.out.println("addInterceptors___________________)");
     }
     /**

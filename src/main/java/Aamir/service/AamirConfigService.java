@@ -12,4 +12,5 @@ public interface AamirConfigService {
     Boolean modifyOptionbyid(AamirConfig aamirConfig);
     List<AamirConfig> getAllOptions();
     AamirConfig findbynameadnfield(String field,String name);
+    Boolean switches(String field,String name);
 }

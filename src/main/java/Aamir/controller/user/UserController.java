@@ -5,17 +5,22 @@ import Aamir.model.dto.Result;
 import Aamir.model.dto.UserInfoDTO;
 import Aamir.model.entity.User;
 import Aamir.model.enums.HttpStatus;
+import Aamir.model.params.ForgotPWDParam;
 import Aamir.model.params.LoginParam;
 import Aamir.model.params.ResetPasswdParams;
+import Aamir.service.MailService;
 import Aamir.service.UserService;
 import Aamir.utils.JwtTokenUtil;
 import Aamir.utils.ResultGenerator;
 import io.jsonwebtoken.Claims;
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,8 +32,11 @@ import java.util.Map;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private UserService userService;
+    @Autowired
+    private MailService mailService;
 
     @GetMapping("/login")
     @ApiOperation("login website")
@@ -95,9 +103,9 @@ public class UserController {
             //先写死 应该从token中获取
             //map.put("name", parseToken.getSubject());
             System.out.println(parseToken.getSubject());
-            map.put("name","admin");
-            map.put("userId","admin");
-            map.put("avatar",userService.getUser(1).getAvatar());
+            map.put("name", "admin");
+            map.put("userId", "admin");
+            map.put("avatar", userService.getUser(1).getAvatar());
             String[] ms = parseToken.getSubject().split(":");
             System.out.println(ms.toString());
             result.setResultCode(200);
@@ -112,7 +120,7 @@ public class UserController {
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     @ApiOperation("logout")
     @ResponseBody
-    public Result<User> logout(){
+    public Result<User> logout() {
         Result result = new Result();
         result.setResultCode(200);
         result.setMessage("logout");
@@ -136,7 +144,7 @@ public class UserController {
 
     @GetMapping("/getUserInfo")
     @ResponseBody
-    public Result getUserInfo(){
+    public Result getUserInfo() {
         //TODO:写死从1号
         User user = userService.getUser(1);
         UserInfoDTO userInfoDTO = new UserInfoDTO();
@@ -146,23 +154,49 @@ public class UserController {
         userInfoDTO.setEmail(user.getEmail());
         userInfoDTO.setNickname(user.getNickname());
         userInfoDTO.setUsername(user.getUsername());
-        return ResultGenerator.getResultByHttp(HttpStatus.OK,userInfoDTO);
+        return ResultGenerator.getResultByHttp(HttpStatus.OK, userInfoDTO);
     }
 
     @PostMapping("/updateUserInfo")
     @ResponseBody
-    public Result modifyUserInfo(@RequestBody User user){
-        return ResultGenerator.getResultByHttp(HttpStatus.OK,userService.updateUser(user));
+    public Result modifyUserInfo(@RequestBody User user) {
+        return ResultGenerator.getResultByHttp(HttpStatus.OK, userService.updateUser(user));
     }
 
 
     @PostMapping("/resetPassword")
     @ResponseBody
-    public Result resetPassword(@RequestBody ResetPasswdParams resetPasswdParams){
-       if (userService.validatePassword(resetPasswdParams.getUsername(),resetPasswdParams.getOldpassword())){
-           if (userService.modifyPassword(resetPasswdParams.getUsername(),resetPasswdParams.getNewpassword())){
-               return ResultGenerator.getResultByHttp(HttpStatus.OK,"修改成功");
-           }
-       }return ResultGenerator.getResultByHttp(HttpStatus.OK,"修改失败");
+    public Result resetPassword(@RequestBody ResetPasswdParams resetPasswdParams) {
+        if (userService.validatePassword(resetPasswdParams.getUsername(), resetPasswdParams.getOldpassword())) {
+            if (userService.modifyPassword(resetPasswdParams.getUsername(), resetPasswdParams.getNewpassword())) {
+                return ResultGenerator.getResultByHttp(HttpStatus.OK, "修改成功");
+            }
+        }
+        return ResultGenerator.getResultByHttp(HttpStatus.OK, "修改失败");
+    }
+
+    @PostMapping("/forgotPassword")
+    @ResponseBody
+    public Result forgotPassword(@RequestBody ForgotPWDParam forgotPWDParam) {
+        if (userService.forgotPassword(forgotPWDParam)) {
+            User user = userService.getUserBy(forgotPWDParam.getUsername(), forgotPWDParam.getNickname(), forgotPWDParam.getEmail());
+            String pwd = user.getPassword();
+            String content = "您的密码为："+pwd +",请尽快修改！";
+            try {
+                mailService.sendSimpleEmail(user.getEmail(), "密码", content);
+            } catch (Exception e) {
+                logger.info("Controller异常");
+            }
+            return ResultGenerator.getResultByHttp(HttpStatus.OK,"success");
+        } else {
+            try {
+                //TODO
+                User user = userService.getUser(1);
+                mailService.sendSimpleEmail(user.getEmail(), "危险", "有人尝试获取您的密码");
+            } catch (Exception e) {
+                logger.info("Controller异常");
+            }
+            return ResultGenerator.getResultByHttp(HttpStatus.OK,"danger");
+        }
     }
 }
