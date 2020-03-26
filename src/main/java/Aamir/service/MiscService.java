@@ -28,5 +28,6 @@ public interface MiscService {
     Comment getOne();
     Post getOnePost();
     Tag getTagbyid(Integer id);
+    Boolean wechatNotification();
     //List<Post> getAllpostsbypostid_cate(List<Integer> list, Pageable pageable);
 }

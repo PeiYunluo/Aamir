@@ -46,7 +46,7 @@ public class AamirConfigController {
     @PostMapping("/switches")
     @ResponseBody
     public Result switches(@RequestBody AamirConfig aamirConfig){
-        return null;
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,aamirConfigService.switches(aamirConfig.getConfigfield(),aamirConfig.getConfigname()));
     }
 
 }

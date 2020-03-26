@@ -1,16 +1,19 @@
 package Aamir.service.Impl;
 
 import Aamir.model.entity.*;
+import Aamir.model.wechat.WechatTokenResponse;
 import Aamir.repository.*;
 import Aamir.service.MiscService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * @author peiyunluo@icloud.com
@@ -33,6 +36,8 @@ public class MiscServiceImpl implements MiscService {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private AamirConfigRepository aamirConfigRepository;
     @Override
     public List<Integer> findallpostsbytagid(Integer tagid) {
         List<PostTag> postTagList = postTagRepository.findAllByTagId(tagid);
@@ -177,5 +182,32 @@ public class MiscServiceImpl implements MiscService {
     @Override
     public Tag getTagbyid(Integer id) {
         return tagRepository.findById(id).get();
+    }
+
+    @Override
+    public Boolean wechatNotification() {
+        try {
+            RestTemplate restTemplate = new RestTemplate();
+            String appid = "appid="+aamirConfigRepository.findByConfigfieldAndAndConfigname("WeChattest","AppID").getConfigvalue();
+            String secret = "secret="+aamirConfigRepository.findByConfigfieldAndAndConfigname("WeChattest","AppSecret").getConfigvalue();
+            String gettoken = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential"+"&"+appid+"&"+secret;
+            WechatTokenResponse wechatTokenResponse =  restTemplate.getForObject(gettoken,WechatTokenResponse.class);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.valueOf("application/json;UTF-8"));
+            Map<String,String> map = new HashMap<>();
+            String touser = aamirConfigRepository.findByConfigfieldAndAndConfigname("WeChattest","Openid").getConfigvalue();
+            String template_id = aamirConfigRepository.findByConfigfieldAndAndConfigname("WeChattest","templateid").getConfigvalue();
+            map.put("touser",touser);
+            map.put("template_id",template_id);
+            HttpEntity requestEntity = new HttpEntity(map,headers);
+            String accesstoken = "access_token"+"="+wechatTokenResponse.getAccess_token();
+            String posturl = "https://api.weixin.qq.com/cgi-bin/message/template/send?"+accesstoken;
+            //WechatTokenResponse wechatTokenResponse =  restTemplate.getForObject("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxe4e3b8dcb1ca8952&secret=21b8896b55f7db7cce1724c4fe00519f",WechatTokenResponse.class);
+            String string = restTemplate.postForObject(posturl,requestEntity,String.class);
+            return true;
+        } catch (Exception e){
+            return false;
+        }
+
     }
 }

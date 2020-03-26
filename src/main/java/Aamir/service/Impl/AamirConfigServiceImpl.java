@@ -41,7 +41,7 @@ public class AamirConfigServiceImpl implements AamirConfigService {
     public Boolean switches(String field, String name) {
         try {
             AamirConfig aamirConfig = aamirConfigRepository.findByConfigfieldAndAndConfigname(field,name);
-            aamirConfig.setConfigvalue((aamirConfig.getConfigvalue().equals("TURE"))?"FALSE":"TURE");
+            aamirConfig.setConfigvalue((aamirConfig.getConfigvalue().equals("TRUE"))?"FALSE":"TRUE");
             aamirConfigRepository.saveAndFlush(aamirConfig);
             return true;
         } catch (Exception e){
