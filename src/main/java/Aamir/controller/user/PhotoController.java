@@ -6,6 +6,7 @@ import Aamir.model.entity.Photo;
 import Aamir.model.enums.HttpStatus;
 import Aamir.service.AamirConfigService;
 import Aamir.service.PhotoService;
+import Aamir.upload.AliUpload;
 import Aamir.upload.QinniuUpload;
 import Aamir.utils.ResultGenerator;
 import Aamir.utils.UploadFileUtils;
@@ -22,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 
 /**
  * @author peiyunluo@icloud.com
@@ -62,6 +64,12 @@ public class PhotoController {
     @ResponseBody
     public Result getAllphotos(){
         return ResultGenerator.getResultByHttp(HttpStatus.OK,photoService.getAllPhotosurl());
+    }
+    @GetMapping("/AliOss/getAllAliOssphotos")
+    @ApiOperation("get qiniu token")
+    @ResponseBody
+    public Result getAllAliOssphotos(){
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,photoService.getAllAliOssPhotosurl());
     }
 
     @GetMapping("/qiniu/getAlllocalphotos")
@@ -110,7 +118,7 @@ public class PhotoController {
         return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST,"错误");
     }
 
-        @PostMapping("/uploadmarkdown")
+    @PostMapping("/uploadmarkdown")
     @ResponseBody
     public Result uploadMarkdown(MultipartFile file){
         //图片写在磁盘D盘
@@ -150,5 +158,31 @@ public class PhotoController {
         return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST,"错误");
     }
 
+    @GetMapping("/AliOss/getToken")
+    @ApiOperation("get token")
+    @ResponseBody
+    public Result getAliOSSToken(){
+        AliUpload aliUpload = new AliUpload();
+        //aliUpload.getAliOSSToken();
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,"sucesss");
+    }
 
+    @PostMapping("/uploadAliOss")
+    @ResponseBody
+    public Result uploadAliOss(MultipartFile file){
+        AliUpload aliUpload = new AliUpload();
+        String accessKey = aamirConfigService.findbynameadnfield("AliOss","accessKey").getConfigvalue();
+        String accessSecret = aamirConfigService.findbynameadnfield("AliOss","secretKey").getConfigvalue();
+        String bucketName= aamirConfigService.findbynameadnfield("AliOss","bucket").getConfigvalue();
+        String endPoint= aamirConfigService.findbynameadnfield("AliOss","endPoint").getConfigvalue();
+        long newMillis = System.currentTimeMillis();
+        Date now = new Date(newMillis);
+        String fileName = String.valueOf(newMillis);
+        aliUpload.upload(file,endPoint,accessKey,accessSecret,bucketName,fileName);
+        Photo photo = new Photo();
+        photo.setUrl(fileName);
+        photo.setDescription("AliOss");
+        photoService.savePhoto(photo);
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,"sucesss");
+    }
 }

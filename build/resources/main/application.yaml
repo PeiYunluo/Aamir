@@ -28,6 +28,10 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/aamir?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
     username: root
     password: root
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://rm-2zej92eqw489g12c4yo.mysql.rds.aliyuncs.com:3306/aamir?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+#    username: peiyunluo
+#    password: Yunluo1012
 
   h2:
     console:

@@ -32,7 +32,7 @@ public class PhotoServiceImpl implements PhotoService {
         List<Photo> photoList = photoRepository.findAll();
         for (Photo photo:photoList
              ) {
-            if (photo.getUrl()!=null && !photo.getUrl().equals("")){
+            if (photo.getUrl()!=null && !photo.getUrl().equals("") && photo.getDescription() == null){
                 stringList.add(photo.getUrl());
             }
 
@@ -48,6 +48,20 @@ public class PhotoServiceImpl implements PhotoService {
         ) {
             if (photo.getLocalurl()!=null && !photo.getLocalurl().equals("")){
                 stringList.add(photo.getLocalurl());
+            }
+
+        }
+        return stringList;
+    }
+
+    @Override
+    public List<String> getAllAliOssPhotosurl() {
+        List<String> stringList = new ArrayList<>();
+        List<Photo> photoList = photoRepository.findAll();
+        for (Photo photo:photoList
+        ) {
+            if (photo.getDescription()!=null && photo.getDescription().equals("AliOss")){
+                stringList.add(photo.getUrl());
             }
 
         }

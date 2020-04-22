@@ -12,4 +12,5 @@ public interface PhotoService {
     boolean savePhoto(Photo photo);
     List<String> getAllPhotosurl();
     List<String> getAllPhotosLocalurl();
+    List<String> getAllAliOssPhotosurl();
 }
