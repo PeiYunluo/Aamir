@@ -48,4 +48,10 @@ public class AamirConfigServiceImpl implements AamirConfigService {
             return false;
         }
     }
+
+    @Override
+    public Boolean initAllOptions() {
+
+        return null;
+    }
 }

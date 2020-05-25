@@ -199,4 +199,12 @@ public class UserController {
             return ResultGenerator.getResultByHttp(HttpStatus.OK,"danger");
         }
     }
+    @PostMapping("/install")
+    @ResponseBody
+    public Result install(@RequestBody User user) {
+        //TODO：如果用户表数据库为空才可安装
+
+        userService.initUser(user);
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,"安装成功");
+    }
 }

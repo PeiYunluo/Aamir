@@ -15,4 +15,5 @@ public interface UserService {
     Boolean modifyPassword(String userId,String newPwd);
     Boolean forgotPassword(ForgotPWDParam forgotPWDParam);
     User getUserBy(String username,String nickname,String email);
+    User initUser(User user);
 }

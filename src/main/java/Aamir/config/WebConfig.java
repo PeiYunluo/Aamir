@@ -36,7 +36,6 @@ public class WebConfig implements WebMvcConfigurer {
                 .addPathPatterns("/tag/**","/category/**","/link/**","/comment/**","/post/**")
                 .excludePathPatterns("/user/login","/comment/addComment");
 
-
         System.out.println("addInterceptors___________________)");
     }
     /**

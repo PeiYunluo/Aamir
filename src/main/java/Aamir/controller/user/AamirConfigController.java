@@ -49,4 +49,5 @@ public class AamirConfigController {
         return ResultGenerator.getResultByHttp(HttpStatus.OK,aamirConfigService.switches(aamirConfig.getConfigfield(),aamirConfig.getConfigname()));
     }
 
+
 }

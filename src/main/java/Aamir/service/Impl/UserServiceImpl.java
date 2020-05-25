@@ -70,4 +70,13 @@ public class UserServiceImpl implements UserService {
     public User getUserBy(String username, String nickname, String email) {
         return userRepository.findByUsernameAndNicknameAndEmail(username,nickname,email);
     }
+
+    @Override
+    public User initUser(User user) {
+        if (userRepository.existsById(1)){
+            userRepository.deleteById(1);
+        }
+        user.setId(1);
+        return userRepository.saveAndFlush(user);
+    }
 }
