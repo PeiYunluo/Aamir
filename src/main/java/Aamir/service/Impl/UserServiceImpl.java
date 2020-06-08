@@ -79,4 +79,11 @@ public class UserServiceImpl implements UserService {
         user.setId(1);
         return userRepository.saveAndFlush(user);
     }
+
+    @Override
+    public Boolean isExist() {
+        if (userRepository.existsById(1))
+        return true;
+        else return false;
+    }
 }

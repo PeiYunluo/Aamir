@@ -16,4 +16,5 @@ public interface UserService {
     Boolean forgotPassword(ForgotPWDParam forgotPWDParam);
     User getUserBy(String username,String nickname,String email);
     User initUser(User user);
+    Boolean isExist();
 }

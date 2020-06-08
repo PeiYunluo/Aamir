@@ -141,4 +141,9 @@ public class PostServiceImpl implements PostService {
         }
         return visits;
     }
+
+    @Override
+    public List<Post> getAllPostsByname(String title) {
+        return postRepository.findAllByTitleLike(title);
+    }
 }

@@ -20,4 +20,5 @@ public interface PostRepository  extends JpaRepository<Post,Integer> {
     Long countByDeleted(Boolean delete);
     Long countByStatus(Integer status);
     List<Post> findAllByDeletedAndStatus(Boolean deleted,Integer status);
+    List<Post> findAllByTitleLike(String title);
 }

@@ -34,7 +34,7 @@ import java.util.Map;
  */
 @RequestMapping("/misc")
 @Controller
-public class MiscController {
+public class  MiscController {
 
     @Autowired
     private MiscService miscService;
@@ -52,6 +52,24 @@ public class MiscController {
     private UserService userService;
 
     RestTemplate restTemplate = new RestTemplate();
+
+
+    @GetMapping("/fetchAllpostsByname")
+    @ResponseBody
+    public Result fetchAllpostsByname(String searchstr) {
+
+        List<Post> list = miscService.getAllPostsByname(searchstr);
+
+        //去除已删除
+        List<Post> newlist = new ArrayList<>();
+        for (Post post : list
+        ) {
+            if (post.getDeleted() == true || post.getStatus() == 0) {
+
+            } else newlist.add(post);
+        }
+        return ResultGenerator.getResultByHttp(HttpStatus.OK,newlist);
+    }
 
 
     @GetMapping("/fetchAllpostsBytagid")
@@ -169,17 +187,14 @@ public class MiscController {
     @PostMapping("/addComment")
     @ResponseBody
     public Result addComment(@RequestBody Comment comment) {
-
-        //TODO
+        //TODO uesr写死
         User user = userService.getUser(1);
-
         if (miscService.addComment(comment)) {
             AamirConfig aamirConfig = aamirConfigService.findbynameadnfield("QQMail", "email");
             if (aamirConfig.getConfigvalue().equals("TRUE")) {
                 mailService.sendSimpleEmail(user.getEmail(), "评论审核", "您有新的评论需要审核");
             }
             AamirConfig aamirConfig1 = aamirConfigService.findbynameadnfield("WeChattest", "notification");
-
             if (aamirConfig1.getConfigvalue().equals("TRUE")) {
                 //TODO wechat逻辑
                 //https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxe4e3b8dcb1ca8952&secret=21b8896b55f7db7cce1724c4fe00519f
@@ -222,27 +237,26 @@ public class MiscController {
     }
 
 
-
     @GetMapping("/testWechat")
     @ResponseBody
-    public Result testWechat(){
+    public Result testWechat() {
         RestTemplate restTemplate = new RestTemplate();
-        String appid = "appid="+aamirConfigService.findbynameadnfield("WeChattest","AppID").getConfigvalue();
-        String secret = "secret="+aamirConfigService.findbynameadnfield("WeChattest","AppSecret").getConfigvalue();
-        String gettoken = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential"+"&"+appid+"&"+secret;
-        WechatTokenResponse wechatTokenResponse =  restTemplate.getForObject(gettoken,WechatTokenResponse.class);
+        String appid = "appid=" + aamirConfigService.findbynameadnfield("WeChattest", "AppID").getConfigvalue();
+        String secret = "secret=" + aamirConfigService.findbynameadnfield("WeChattest", "AppSecret").getConfigvalue();
+        String gettoken = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential" + "&" + appid + "&" + secret;
+        WechatTokenResponse wechatTokenResponse = restTemplate.getForObject(gettoken, WechatTokenResponse.class);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.valueOf("application/json;UTF-8"));
-        Map<String,String> map = new HashMap<>();
-        String touser = aamirConfigService.findbynameadnfield("WeChattest","Openid").getConfigvalue();
-        String template_id = aamirConfigService.findbynameadnfield("WeChattest","templateid").getConfigvalue();
-        map.put("touser",touser);
-        map.put("template_id",template_id);
-        HttpEntity requestEntity = new HttpEntity(map,headers);
-        String accesstoken = "access_token"+"="+wechatTokenResponse.getAccess_token();
-        String posturl = "https://api.weixin.qq.com/cgi-bin/message/template/send?"+accesstoken;
+        Map<String, String> map = new HashMap<>();
+        String touser = aamirConfigService.findbynameadnfield("WeChattest", "Openid").getConfigvalue();
+        String template_id = aamirConfigService.findbynameadnfield("WeChattest", "templateid").getConfigvalue();
+        map.put("touser", touser);
+        map.put("template_id", template_id);
+        HttpEntity requestEntity = new HttpEntity(map, headers);
+        String accesstoken = "access_token" + "=" + wechatTokenResponse.getAccess_token();
+        String posturl = "https://api.weixin.qq.com/cgi-bin/message/template/send?" + accesstoken;
         //WechatTokenResponse wechatTokenResponse =  restTemplate.getForObject("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxe4e3b8dcb1ca8952&secret=21b8896b55f7db7cce1724c4fe00519f",WechatTokenResponse.class);
-        String string = restTemplate.postForObject(posturl,requestEntity,String.class);
-        return ResultGenerator.getResultByHttp(HttpStatus.OK,string);
+        String string = restTemplate.postForObject(posturl, requestEntity, String.class);
+        return ResultGenerator.getResultByHttp(HttpStatus.OK, string);
     }
 }

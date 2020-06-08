@@ -181,13 +181,13 @@ public class UserController {
         if (userService.forgotPassword(forgotPWDParam)) {
             User user = userService.getUserBy(forgotPWDParam.getUsername(), forgotPWDParam.getNickname(), forgotPWDParam.getEmail());
             String pwd = user.getPassword();
-            String content = "您的密码为："+pwd +",请尽快修改！";
+            String content = "您的密码为：" + pwd + ",请尽快修改！";
             try {
                 mailService.sendSimpleEmail(user.getEmail(), "密码", content);
             } catch (Exception e) {
                 logger.info("Controller异常");
             }
-            return ResultGenerator.getResultByHttp(HttpStatus.OK,"success");
+            return ResultGenerator.getResultByHttp(HttpStatus.OK, "success");
         } else {
             try {
                 //TODO
@@ -196,15 +196,19 @@ public class UserController {
             } catch (Exception e) {
                 logger.info("Controller异常");
             }
-            return ResultGenerator.getResultByHttp(HttpStatus.OK,"danger");
+            return ResultGenerator.getResultByHttp(HttpStatus.OK, "danger");
         }
     }
+
     @PostMapping("/install")
     @ResponseBody
     public Result install(@RequestBody User user) {
         //TODO：如果用户表数据库为空才可安装
-
+        if (userService.isExist()){
+            return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST, "Bad REQUEST");
+        }
         userService.initUser(user);
-        return ResultGenerator.getResultByHttp(HttpStatus.OK,"安装成功");
+        //TODO：安装config表
+        return ResultGenerator.getResultByHttp(HttpStatus.OK, "安装成功");
     }
 }

@@ -63,7 +63,7 @@ public class TagController {
      *
      * @param ajaxPutPage
      * @param condition
-     * @return com.site.blog.dto.AjaxResultPage<com.site.blog.entity.BlogTag>
+     * @return
      * @date 2019/9/1 11:20
      */
     @ResponseBody

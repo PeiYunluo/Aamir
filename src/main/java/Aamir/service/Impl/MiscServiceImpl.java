@@ -210,4 +210,9 @@ public class MiscServiceImpl implements MiscService {
         }
 
     }
+
+    @Override
+    public List<Post> getAllPostsByname(String title) {
+        return postRepository.findAllByTitleLike("%"+title+"%");
+    }
 }

@@ -7,6 +7,8 @@ import Aamir.model.params.PostUpdateParam;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
+
 /**
  * @author peiyunluo@icloud.com
  * @date 2020/3/11 16:07
@@ -22,4 +24,5 @@ public interface PostService {
     Post getPostbyid(Integer id);
     Long getposts();
     Long getthecountofvisits();
+    List getAllPostsByname(String title);
 }

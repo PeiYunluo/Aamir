@@ -36,17 +36,17 @@ public class UploadController {
     @GetMapping("/qiniu/getToken")
     @ApiOperation("get qiniu token")
     @ResponseBody
-    public Result getToken(){
-        String accessKey = aamirConfigService.findbynameadnfield("Qiniu","accessKey").getConfigvalue();
-        String secretKey = aamirConfigService.findbynameadnfield("Qiniu","secretKey").getConfigvalue();
-        String bucket= aamirConfigService.findbynameadnfield("Qiniu","bucket").getConfigvalue();
+    public Result getToken() {
+        String accessKey = aamirConfigService.findbynameadnfield("Qiniu", "accessKey").getConfigvalue();
+        String secretKey = aamirConfigService.findbynameadnfield("Qiniu", "secretKey").getConfigvalue();
+        String bucket = aamirConfigService.findbynameadnfield("Qiniu", "bucket").getConfigvalue();
 
         QinniuUpload qinniuUpload = new QinniuUpload();
         QiniuImgDTO qiniuImgDTO = new QiniuImgDTO();
-        qiniuImgDTO.setToken(qinniuUpload.getToken(accessKey,secretKey,bucket));
+        qiniuImgDTO.setToken(qinniuUpload.getToken(accessKey, secretKey, bucket));
         long newMillis = System.currentTimeMillis();
         qiniuImgDTO.setKey(String.valueOf(newMillis));
-        return ResultGenerator.getResultByHttp(HttpStatus.OK,qiniuImgDTO);
+        return ResultGenerator.getResultByHttp(HttpStatus.OK, qiniuImgDTO);
     }
 
     @PostMapping({"/upload/authorImg"})

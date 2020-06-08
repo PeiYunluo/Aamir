@@ -43,49 +43,50 @@ public class PhotoController {
     @GetMapping("/qiniu/getToken")
     @ApiOperation("get qiniu token")
     @ResponseBody
-    public Result getToken(){
-        String accessKey = aamirConfigService.findbynameadnfield("Qiniu","accessKey").getConfigvalue();
-        String secretKey = aamirConfigService.findbynameadnfield("Qiniu","secretKey").getConfigvalue();
-        String bucket= aamirConfigService.findbynameadnfield("Qiniu","bucket").getConfigvalue();
+    public Result getToken() {
+        String accessKey = aamirConfigService.findbynameadnfield("Qiniu", "accessKey").getConfigvalue();
+        String secretKey = aamirConfigService.findbynameadnfield("Qiniu", "secretKey").getConfigvalue();
+        String bucket = aamirConfigService.findbynameadnfield("Qiniu", "bucket").getConfigvalue();
         QinniuUpload qinniuUpload = new QinniuUpload();
         QiniuImgDTO qiniuImgDTO = new QiniuImgDTO();
-        qiniuImgDTO.setToken(qinniuUpload.getToken(accessKey,secretKey,bucket));
+        qiniuImgDTO.setToken(qinniuUpload.getToken(accessKey, secretKey, bucket));
         long newMillis = System.currentTimeMillis();
         qiniuImgDTO.setKey(String.valueOf(newMillis));
         Photo photo = new Photo();
         photo.setUrl(String.valueOf(newMillis));
         if (photoService.savePhoto(photo))
-        return ResultGenerator.getResultByHttp(HttpStatus.OK,qiniuImgDTO);
+            return ResultGenerator.getResultByHttp(HttpStatus.OK, qiniuImgDTO);
         return ResultGenerator.getResultByHttp(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @GetMapping("/qiniu/getAllphotos")
     @ApiOperation("get qiniu token")
     @ResponseBody
-    public Result getAllphotos(){
-        return ResultGenerator.getResultByHttp(HttpStatus.OK,photoService.getAllPhotosurl());
+    public Result getAllphotos() {
+        return ResultGenerator.getResultByHttp(HttpStatus.OK, photoService.getAllPhotosurl());
     }
+
     @GetMapping("/AliOss/getAllAliOssphotos")
     @ApiOperation("get qiniu token")
     @ResponseBody
-    public Result getAllAliOssphotos(){
-        return ResultGenerator.getResultByHttp(HttpStatus.OK,photoService.getAllAliOssPhotosurl());
+    public Result getAllAliOssphotos() {
+        return ResultGenerator.getResultByHttp(HttpStatus.OK, photoService.getAllAliOssPhotosurl());
     }
 
     @GetMapping("/qiniu/getAlllocalphotos")
     @ApiOperation("get qiniu token")
     @ResponseBody
-    public Result getAlllocalphotos(){
-        return ResultGenerator.getResultByHttp(HttpStatus.OK,photoService.getAllPhotosLocalurl());
+    public Result getAlllocalphotos() {
+        return ResultGenerator.getResultByHttp(HttpStatus.OK, photoService.getAllPhotosLocalurl());
     }
 
     @PostMapping("/uploadFile")
     @ResponseBody
-    public Result uploadFile(MultipartFile file){
+    public Result uploadFile(MultipartFile file) {
         //图片写在磁盘D盘
         String path = "d://uploadFiles/";
         if (file.isEmpty()) {
-            return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST,"文件不能为空");
+            return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST, "文件不能为空");
         }
         String fileName = file.getOriginalFilename();
         logger.info("上传的文件名为：" + fileName);
@@ -109,22 +110,22 @@ public class PhotoController {
             photo.setLocalurl(fileUrl);
             photo.setName(fileName);
             photoService.savePhoto(photo);
-            return ResultGenerator.getResultByHttp(HttpStatus.OK,filePath + fileName);
+            return ResultGenerator.getResultByHttp(HttpStatus.OK, filePath + fileName);
         } catch (IllegalStateException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST,"错误");
+        return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST, "错误");
     }
 
     @PostMapping("/uploadmarkdown")
     @ResponseBody
-    public Result uploadMarkdown(MultipartFile file){
+    public Result uploadMarkdown(MultipartFile file) {
         //图片写在磁盘D盘
         String path = "d://uploadFiles/Markdown/";
         if (file.isEmpty()) {
-            return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST,"文件不能为空");
+            return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST, "文件不能为空");
         }
         String fileName = file.getOriginalFilename();
         logger.info("上传的文件名为：" + fileName);
@@ -149,40 +150,40 @@ public class PhotoController {
             file.transferTo(dest);
             System.out.println(str);
             logger.info("上传成功后的文件路径为：" + filePath + fileName);
-            return ResultGenerator.getResultByHttp(HttpStatus.OK,str);
+            return ResultGenerator.getResultByHttp(HttpStatus.OK, str);
         } catch (IllegalStateException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST,"错误");
+        return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST, "错误");
     }
 
     @GetMapping("/AliOss/getToken")
     @ApiOperation("get token")
     @ResponseBody
-    public Result getAliOSSToken(){
+    public Result getAliOSSToken() {
         AliUpload aliUpload = new AliUpload();
         //aliUpload.getAliOSSToken();
-        return ResultGenerator.getResultByHttp(HttpStatus.OK,"sucesss");
+        return ResultGenerator.getResultByHttp(HttpStatus.OK, "sucesss");
     }
 
     @PostMapping("/uploadAliOss")
     @ResponseBody
-    public Result uploadAliOss(MultipartFile file){
+    public Result uploadAliOss(MultipartFile file) {
         AliUpload aliUpload = new AliUpload();
-        String accessKey = aamirConfigService.findbynameadnfield("AliOss","accessKey").getConfigvalue();
-        String accessSecret = aamirConfigService.findbynameadnfield("AliOss","secretKey").getConfigvalue();
-        String bucketName= aamirConfigService.findbynameadnfield("AliOss","bucket").getConfigvalue();
-        String endPoint= aamirConfigService.findbynameadnfield("AliOss","endPoint").getConfigvalue();
+        String accessKey = aamirConfigService.findbynameadnfield("AliOss", "accessKey").getConfigvalue();
+        String accessSecret = aamirConfigService.findbynameadnfield("AliOss", "secretKey").getConfigvalue();
+        String bucketName = aamirConfigService.findbynameadnfield("AliOss", "bucket").getConfigvalue();
+        String endPoint = aamirConfigService.findbynameadnfield("AliOss", "endPoint").getConfigvalue();
         long newMillis = System.currentTimeMillis();
         Date now = new Date(newMillis);
         String fileName = String.valueOf(newMillis);
-        aliUpload.upload(file,endPoint,accessKey,accessSecret,bucketName,fileName);
+        aliUpload.upload(file, endPoint, accessKey, accessSecret, bucketName, fileName);
         Photo photo = new Photo();
         photo.setUrl(fileName);
         photo.setDescription("AliOss");
         photoService.savePhoto(photo);
-        return ResultGenerator.getResultByHttp(HttpStatus.OK,"sucesss");
+        return ResultGenerator.getResultByHttp(HttpStatus.OK, "sucesss");
     }
 }

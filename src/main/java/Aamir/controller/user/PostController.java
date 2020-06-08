@@ -41,40 +41,40 @@ public class PostController {
     @ResponseBody
     @PostMapping("/create")
     @Transactional
-    public Result savePost(@RequestBody PostSaveParam postSaveParam){
+    public Result savePost(@RequestBody PostSaveParam postSaveParam) {
         Result result = new Result();
-        if (ObjectUtils.isEmpty(postSaveParam)){
+        if (ObjectUtils.isEmpty(postSaveParam)) {
             result.setResultCode(501);
             result.setMessage("无任何内容");
             return result;
         }
         //维护post表
         Post post = postService.saveandupdatePost(postSaveParam);
-        if (post!=null){
+        if (post != null) {
             Integer postid = post.getId();
             //维护posttag表
             List<Integer> tagsid = postSaveParam.getTagsid();
             postTagService.deleteposttagbypostid(postSaveParam.getId());
-            if (!CollectionUtils.isEmpty(tagsid)){
-                for (Integer tagid:tagsid
-                     ) {
+            if (!CollectionUtils.isEmpty(tagsid)) {
+                for (Integer tagid : tagsid
+                ) {
                     //TODO:无法去除之前的标签
                     //TODO：根据postid删除所有posttag项目
                     System.out.println(tagid);
-                    if (!postTagService.isexist(postid,tagid))
-                        postTagService.add(postid,tagid);
+                    if (!postTagService.isexist(postid, tagid))
+                        postTagService.add(postid, tagid);
                 }
                 result.setMessage("tag增加完成");
             }
             //维护postcategory表
             postCategoryService.deletePostCatebypostid(postSaveParam.getId());
             List<Integer> categoriesid = postSaveParam.getCategoriesid();
-            if (!CollectionUtils.isEmpty(categoriesid)){
-                for (Integer categoryid:categoriesid
-                     ) {
+            if (!CollectionUtils.isEmpty(categoriesid)) {
+                for (Integer categoryid : categoriesid
+                ) {
                     System.out.println(categoryid);
-                    if (!postCategoryService.isexist(postid,categoryid))
-                        postCategoryService.add(postid,categoryid);
+                    if (!postCategoryService.isexist(postid, categoryid))
+                        postCategoryService.add(postid, categoryid);
                 }
                 result.setMessage("cate and tag增加完成");
             }
@@ -90,7 +90,7 @@ public class PostController {
     @ResponseBody
     @GetMapping("/list")
     @ApiOperation("vue get post list paging")
-    public AjaxResultPage<Post> getPostlist(PostListParam postListParam){
+    public AjaxResultPage<Post> getPostlist(PostListParam postListParam) {
         Pageable pageable = PageRequest.of(postListParam.getPage() - 1, postListParam.getLimit());
         Page<Post> page = postService.getPosts(pageable);
         AjaxResultPage<Post> postAjaxResultPage = new AjaxResultPage<>();
@@ -102,7 +102,7 @@ public class PostController {
     @ResponseBody
     @GetMapping("/getPostbyid")
     @ApiOperation("vue get post by postid")
-    public Result getPostbyid(Integer id){
+    public Result getPostbyid(Integer id) {
         Post post = postService.getPostbyid(id);
         List<Integer> list1 = postTagService.getTagsidbyid(id);
         List<Integer> list2 = postCategoryService.getCategoriesidbyid(id);
@@ -117,7 +117,7 @@ public class PostController {
         postDTO.setDeleted(post.getDeleted());
         postDTO.setTagsid(list1);
         postDTO.setCategoriesid(list2);
-        return ResultGenerator.getResultByHttp(HttpStatus.OK,postDTO);
+        return ResultGenerator.getResultByHttp(HttpStatus.OK, postDTO);
     }
 
     @ResponseBody
@@ -145,9 +145,9 @@ public class PostController {
     @ResponseBody
     @PostMapping("/gettagsbyid")
     @ApiOperation("vue get all tags by id")
-    public Result getTagsbyid(@RequestBody Post post){
+    public Result getTagsbyid(@RequestBody Post post) {
         List<Integer> list = postTagService.getTagsidbyid(post.getId());
-        Result<List> result =new Result<>();
+        Result<List> result = new Result<>();
         result.setData(list);
         result.setMessage("ok");
         result.setResultCode(200);
@@ -157,9 +157,9 @@ public class PostController {
     @ResponseBody
     @PostMapping("/getcategoriesbyid")
     @ApiOperation("vue get all tags by id")
-    public Result getCategoriesbyid(@RequestBody Post post){
+    public Result getCategoriesbyid(@RequestBody Post post) {
         List<Integer> list = postCategoryService.getCategoriesidbyid(post.getId());
-        Result<List> result =new Result<>();
+        Result<List> result = new Result<>();
         result.setData(list);
         result.setMessage("ok");
         result.setResultCode(200);
@@ -169,30 +169,30 @@ public class PostController {
     @ResponseBody
     @PostMapping("/updatePost")
     @ApiOperation("vue update post")
-    public Result updatePost(@RequestBody  PostUpdateParam postUpdateParam){
+    public Result updatePost(@RequestBody PostUpdateParam postUpdateParam) {
         Result result = new Result();
         Post post = postService.updatePost(postUpdateParam);
-        if (post!=null){
+        if (post != null) {
             Integer postid = post.getId();
             //维护posttag表
             List<Integer> tagsid = postUpdateParam.getTagsid();
-            if (!CollectionUtils.isEmpty(tagsid)){
-                for (Integer tagid:tagsid
+            if (!CollectionUtils.isEmpty(tagsid)) {
+                for (Integer tagid : tagsid
                 ) {
                     System.out.println(tagid);
-                    if (!postTagService.isexist(postid,tagid))
-                    postTagService.add(postid,tagid);
+                    if (!postTagService.isexist(postid, tagid))
+                        postTagService.add(postid, tagid);
                 }
                 result.setMessage("tag增加完成");
             }
             //维护postcategory表
             List<Integer> categoriesid = postUpdateParam.getCategoriesid();
-            if (!CollectionUtils.isEmpty(categoriesid)){
-                for (Integer categoryid:categoriesid
+            if (!CollectionUtils.isEmpty(categoriesid)) {
+                for (Integer categoryid : categoriesid
                 ) {
                     System.out.println(categoryid);
-                    if (!postCategoryService.isexist(postid,categoryid))
-                    postCategoryService.add(postid,categoryid);
+                    if (!postCategoryService.isexist(postid, categoryid))
+                        postCategoryService.add(postid, categoryid);
                 }
                 result.setMessage("cate and tag增加完成");
             }
@@ -207,9 +207,9 @@ public class PostController {
     @ResponseBody
     @PostMapping("/statusswitch")
     @ApiOperation("vue change status")
-    public Result statusswitch(@RequestBody Post post){
+    public Result statusswitch(@RequestBody Post post) {
 
-        if (postService.switchstatus(post.getId())){
+        if (postService.switchstatus(post.getId())) {
             return ResultGenerator.getResultByHttp(HttpStatus.OK);
         }
         return ResultGenerator.getResultByHttp(HttpStatus.INTERNAL_SERVER_ERROR);
