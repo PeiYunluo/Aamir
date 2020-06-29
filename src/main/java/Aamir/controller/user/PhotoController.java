@@ -85,6 +85,7 @@ public class PhotoController {
     public Result uploadFile(MultipartFile file) {
         //图片写在磁盘D盘
         String path = "d://uploadFiles/";
+//        String path = "/uploadFiles/";
         if (file.isEmpty()) {
             return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST, "文件不能为空");
         }
@@ -123,7 +124,9 @@ public class PhotoController {
     @ResponseBody
     public Result uploadMarkdown(MultipartFile file) {
         //图片写在磁盘D盘
+        //TODO
         String path = "d://uploadFiles/Markdown/";
+//        String path = "/uploadFiles/Markdown/";
         if (file.isEmpty()) {
             return ResultGenerator.getResultByHttp(HttpStatus.BAD_REQUEST, "文件不能为空");
         }

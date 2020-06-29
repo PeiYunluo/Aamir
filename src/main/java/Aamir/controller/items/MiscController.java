@@ -191,16 +191,10 @@ public class  MiscController {
         User user = userService.getUser(1);
         if (miscService.addComment(comment)) {
             AamirConfig aamirConfig = aamirConfigService.findbynameadnfield("QQMail", "email");
-            if (aamirConfig.getConfigvalue().equals("TRUE")) {
-                mailService.sendSimpleEmail(user.getEmail(), "评论审核", "您有新的评论需要审核");
-            }
+
             AamirConfig aamirConfig1 = aamirConfigService.findbynameadnfield("WeChattest", "notification");
             if (aamirConfig1.getConfigvalue().equals("TRUE")) {
-                //TODO wechat逻辑
-                //https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxe4e3b8dcb1ca8952&secret=21b8896b55f7db7cce1724c4fe00519f
-                //get请求获取token
-                //31_3byG7yT5fWcc9DRmFApZUARC3WFzLgoVgP65azwFPVsq7Q5bPFqZf8LHLrKuiHxzlRCSGAeLUZ4qPnnUtHFKcNTLgR022MDjTiRZJYyLxCrlDM4MnSYLLD6ijZ9GgJEyPJMETna7ahsENm9RVASdAAAOTL
-                miscService.wechatNotification();
+                          miscService.wechatNotification();
             }
             if (aamirConfig.getConfigvalue().equals("TRUE")) {
                 mailService.sendSimpleEmail(user.getEmail(), "评论审核", "您有新的评论需要审核");
